@@ -142,23 +142,6 @@
     }
     .logo em { color: var(--saffron); font-style: normal; }
 
-    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-    .nav-links a {
-      font-size: 0.9rem; font-weight: 600; color: var(--muted);
-      text-decoration: none; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--ink); }
-
-    .nav-cta {
-      height: 42px; padding: 0 22px; border-radius: 100px;
-      background: var(--ink); color: var(--white) !important;
-      display: inline-flex; align-items: center; gap: 7px;
-      font-weight: 600 !important; cursor: pointer; border: none;
-      font-size: 0.9rem; font-family: inherit;
-      transition: transform 0.2s var(--spring), background 0.2s;
-    }
-    .nav-cta:hover { transform: scale(1.05); background: var(--saffron); }
-
     /* ─── BUTTONS ─────────────────────────────────────── */
     .btn {
       height: 52px; padding: 0 28px; border-radius: 100px;
@@ -546,14 +529,7 @@
 
     /* ─── FOOTER ──────────────────────────────────────── */
     footer { position: relative; z-index: 1; background: var(--ink); color: rgba(255,255,255,0.6); padding: 70px 28px 40px; }
-    .footer-inner { max-width: 1144px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; }
-    .footer-brand .logo { color: var(--white); }
-    .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 14px; max-width: 260px; }
-    .footer-col h5 { color: var(--white); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { max-width: 1144px; margin: 50px auto 0; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+    /* footer handled by nav.js */
 
     /* ─── MODAL ───────────────────────────────────────── */
     .modal-overlay {
@@ -862,7 +838,7 @@
       .how-layout, .comm-layout { grid-template-columns: 1fr; gap: 48px; }
       .testi-grid { grid-template-columns: 1fr; }
       .stats-strip { grid-template-columns: 1fr 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
+      /* footer responsive handled by nav.js */
       .float-card { display: none; }
       .price-card.best { transform: none; }
       .proof-item { padding: 0 18px; }
@@ -1131,7 +1107,7 @@
           "@type": "Review",
           "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
           "author": { "@type": "Person", "name": "Riya Pandey" },
-          "reviewBody": "We won nationals! Built a flood-prediction model for Bihar. None of us had met before Plural — now we're best friends building things that matter.",
+          "reviewBody": "We won nationals! Built a flood-prediction model for Bihar. None of us had met before Plural - now we're best friends building things that matter.",
           "itemReviewed": { "@type": "EducationalOrganization", "name": "Plural" }
         }
       }
@@ -1143,7 +1119,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Plural — AI & Coding Classes for Kids in India",
+    "name": "Plural - AI & Coding Classes for Kids in India",
     "url": "https://plural.ai/",
     "speakable": {
       "@type": "SpeakableSpecification",
@@ -1183,27 +1159,7 @@
 <div class="blob" style="width:380px;height:380px;background:var(--blue);top:200px;right:-120px;opacity:0.14;"></div>
 <div class="blob" style="width:340px;height:340px;background:var(--purple);top:1400px;left:-80px;opacity:0.12;"></div>
 
-<!-- NAV -->
-<nav id="nav" aria-label="Main navigation">
-  <a href="#" class="logo">
-    <span class="logo-mark">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4z" fill="#fff"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </span>
-    Plural<em>.</em>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#experts">Experts</a></li>
-    <li><a href="#batches">Batches</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/about.html">About</a></li>
-  </ul>
-  <button class="nav-cta" onclick="openModal()">
-    Reserve a seat
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </button>
-</nav>
+<!-- NAV injected by nav.js -->
 
 <main id="main-content" role="main">
 
@@ -1229,12 +1185,12 @@
   </h1>
 
   <p class="hero-sub">
-    AI is rewriting every industry. Schools are 20 years behind. Plural teaches India's kids to build with AI — real tools, real projects, real mentors — before the window closes.
+    AI is rewriting every industry. Schools are 20 years behind. Plural teaches India's kids to build with AI - real tools, real projects, real mentors - before the window closes.
   </p>
 
   <div class="hero-actions">
     <button class="btn btn-primary" onclick="openModal()">
-      Start free — 2 weeks on us
+      Start free - 2 weeks on us
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
     <a href="#how" class="btn btn-ghost">See how it works</a>
@@ -1247,17 +1203,17 @@
       <div class="jr-steps">
         <div class="jr-step" data-step="0">
           <span class="jr-dot">1</span>
-          <span class="jr-text">Ask Copilot</span>
+          <span class="jr-text">Mentor teaches the concept</span>
         </div>
         <div class="jr-conn"><i></i></div>
         <div class="jr-step" data-step="1">
           <span class="jr-dot">2</span>
-          <span class="jr-text">AI writes the code</span>
+          <span class="jr-text">Kid builds with AI tools</span>
         </div>
         <div class="jr-conn"><i></i></div>
         <div class="jr-step" data-step="2">
           <span class="jr-dot">3</span>
-          <span class="jr-text">Play the game!</span>
+          <span class="jr-text">Kid's game goes live</span>
         </div>
       </div>
 
@@ -1265,77 +1221,64 @@
       <div class="jr-screen">
         <div class="jr-bar">
           <span class="jr-tl r"></span><span class="jr-tl y"></span><span class="jr-tl g"></span>
-          <span class="jr-tab" id="jrTab">snake.js - VS Code</span>
+          <span class="jr-tab" id="jrTab">Session 4 - Game Loops</span>
         </div>
 
         <div class="jr-stage">
 
-          <!-- SCENE 0 · VS Code + Copilot prompt -->
-          <div class="jr-scene scene-vscode active">
-            <div class="vsc-layout">
-              <!-- sidebar icons -->
-              <div class="vsc-sidebar">
-                <div class="vsc-sb-icon active">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-                </div>
-                <div class="vsc-sb-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-                </div>
-                <div class="vsc-sb-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 00-.9-2.4c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 00-1.4-3.7 4.9 4.9 0 00-.1-3.6s-1.1-.4-3.7 1.4a12.7 12.7 0 00-6.8 0C6.2 2.4 5 2.8 5 2.8a4.9 4.9 0 00-.1 3.6A5.3 5.3 0 003.5 10c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 00-.9 2.4V22"/></svg>
-                </div>
-              </div>
-              <!-- editor with some starter code visible -->
-              <div class="vsc-editor">
-                <div class="vsc-tabs">
-                  <div class="vsc-tab on">snake.js</div>
-                </div>
-                <div class="vsc-lines">
-                  <div class="vsc-line"><span class="vsc-ln">1</span><span><span class="cm">// snake game starter</span></span></div>
-                  <div class="vsc-line"><span class="vsc-ln">2</span><span><span class="kw">const</span> canvas = <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="st">'c'</span>);</span></div>
-                  <div class="vsc-line"><span class="vsc-ln">3</span><span><span class="kw">const</span> ctx = canvas.<span class="fn">getContext</span>(<span class="st">'2d'</span>);</span></div>
-                  <div class="vsc-line"><span class="vsc-ln">4</span><span></span></div>
-                  <div class="vsc-line"><span class="vsc-ln">5</span><span><span class="cm">// TODO: add snake logic</span></span></div>
-                  <div class="vsc-line"><span class="vsc-ln">6</span><span><span class="car"></span></span></div>
-                </div>
-                <div class="vsc-statusbar">
-                  <span>JavaScript</span>
-                  <span>UTF-8</span>
-                  <span style="margin-left:auto;display:flex;align-items:center;gap:5px;">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="white" opacity="0.7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
-                    GitHub Copilot
-                  </span>
-                </div>
-              </div>
-              <!-- copilot chat -->
-              <div class="vsc-chat">
-                <div class="chat-head">
-                  <div class="copilot-logo"></div>
-                  Copilot Chat
-                </div>
-                <div class="chat-body">
-                  <div class="chat-bubble chat-user" id="chatPrompt"></div>
-                  <div class="chat-bubble chat-ai" id="chatReply" style="display:none;">
-                    <span class="typing-dot"></span>
-                    <span class="typing-dot"></span>
-                    <span class="typing-dot"></span>
+          <!-- SCENE 0 · Mentor lesson card -->
+          <div class="jr-scene scene-lesson active">
+            <div class="lesson-layout">
+              <div class="lesson-left">
+                <div class="lesson-mentor">
+                  <div class="mentor-pip">
+                    <div class="mentor-avatar-sm">👩‍💻</div>
+                    <div class="mentor-live"><span class="live-red"></span>LIVE</div>
                   </div>
+                  <div>
+                    <div class="mentor-nm">Priya Krishnamurthy</div>
+                    <div class="mentor-bg">Ex-Google · IIT Madras</div>
+                  </div>
+                </div>
+                <div class="lesson-concept">
+                  <div class="concept-label">Today's concept</div>
+                  <div class="concept-title">How does a game think?</div>
+                  <div class="concept-steps">
+                    <div class="cs-item cs-done" id="cs0"><span class="cs-dot"></span>What is a game loop?</div>
+                    <div class="cs-item" id="cs1"><span class="cs-dot"></span>State: position, score, direction</div>
+                    <div class="cs-item" id="cs2"><span class="cs-dot"></span>Input: reading arrow keys</div>
+                    <div class="cs-item" id="cs3"><span class="cs-dot"></span>Render: draw to canvas</div>
+                  </div>
+                </div>
+              </div>
+              <div class="lesson-right">
+                <div class="loop-diagram">
+                  <div class="loop-node ln-read">Read Input</div>
+                  <div class="loop-arrow">↓</div>
+                  <div class="loop-node ln-update">Update State</div>
+                  <div class="loop-arrow">↓</div>
+                  <div class="loop-node ln-draw">Draw Frame</div>
+                  <div class="loop-arrow">↓</div>
+                  <div class="loop-back">Wait 16ms... repeat ↑</div>
+                </div>
+                <div class="lesson-chat">
+                  <div class="lc-bubble" id="lcBubble"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SCENE 1 · AI streams the game code -->
+          <!-- SCENE 1 · Kid codes in VS Code + Copilot assists -->
           <div class="jr-scene scene-codegen">
             <div class="stream-header">
-              <div class="cp-spin"></div>
-              <span>snake.js</span>
-              <span style="color:rgba(255,255,255,0.3);margin-left:auto;">GitHub Copilot is writing...</span>
+              <span style="color:#4EC94E;font-size:0.7rem;font-weight:700;">ARYAN IS TYPING</span>
+              <span style="color:rgba(255,255,255,0.5);margin:0 8px;">snake.js</span>
+              <span style="color:rgba(255,255,255,0.3);margin-left:auto;font-size:0.68rem;">Copilot suggestion in grey - Tab to accept</span>
             </div>
             <div class="stream-lines" id="streamLines"></div>
             <div class="copilot-bar">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
-              <span id="copilotStatus">Generating snake game...</span>
+              <span id="copilotStatus">Aryan is building the game loop...</span>
             </div>
           </div>
 
@@ -1350,13 +1293,12 @@
               <div class="game-hint">Use ↑ ↓ ← → to play · auto-plays on demo</div>
             </div>
             <div class="game-sidebar">
-              <div class="game-sidebar-label">Built with</div>
-              <div class="game-tool"><span class="tdot" style="background:#007ACC;"></span>VS Code</div>
-              <div class="game-tool"><span class="tdot" style="background:#fff;"></span>GitHub Copilot</div>
-              <div class="game-tool"><span class="tdot" style="background:#F7DF1E;"></span>JavaScript</div>
-              <div class="game-tool" style="margin-top:4px;border-color:rgba(78,201,78,0.3);color:#4EC94E;">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-                Shipped in 30 min 🚀
+              <div class="game-sidebar-label">Aryan built this, age 13</div>
+              <div class="game-tool"><span class="tdot" style="background:#4EC94E;"></span>Learned: game loops</div>
+              <div class="game-tool"><span class="tdot" style="background:#007ACC;"></span>Tool: VS Code + Copilot</div>
+              <div class="game-tool"><span class="tdot" style="background:#F7DF1E;"></span>Language: JavaScript</div>
+              <div class="game-tool" style="margin-top:4px;border-color:rgba(78,201,78,0.3);color:#4EC94E;font-weight:700;">
+                Session 4 of 12 · Rajasthan
               </div>
             </div>
           </div>
@@ -1364,7 +1306,7 @@
         </div>
       </div>
 
-      <div class="jr-caption" id="jrCaption">A 13-year-old asks GitHub Copilot to build a snake game...</div>
+      <div class="jr-caption" id="jrCaption">First the concept. Then the code. Then the game ships.</div>
     </div>
   </div>
 </header>
@@ -1411,7 +1353,7 @@
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
         <div class="wm-stat">600M</div>
-        <div class="wm-title">Indians under 25 — waiting to build</div>
+        <div class="wm-title">Indians under 25 - waiting to build</div>
         <p class="wm-body">India's biggest advantage isn't resources. It's people. The child who learns to build with AI today becomes the architect of tomorrow's India.</p>
       </div>
     </div>
@@ -1667,7 +1609,7 @@
         <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Weekly WhatsApp update for parents</li>
       </ul>
       <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="openModal()">Reserve a seat</button>
-      <div class="price-compare">Byju's costs ₹80K/yr. Coaching ₹10K/mo.<br>Plural is ₹5K/mo — and actually teaches the future.</div>
+      <div class="price-compare">Byju's costs ₹80K/yr. Coaching ₹10K/mo.<br>Plural is ₹5K/mo - and actually teaches the future.</div>
     </div>
 
     <div class="price-card reveal d2">
@@ -1709,19 +1651,19 @@
       <button class="faq-q" onclick="toggleFaq(this)">My child has never coded. Is this too hard?
         <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a">Not at all. We start from zero — no prior knowledge, no prior interest in computers required. The first session feels like play. Most kids build something they're proud of in week one.</div>
+      <div class="faq-a">Not at all. We start from zero - no prior knowledge, no prior interest in computers required. The first session feels like play. Most kids build something they're proud of in week one.</div>
     </div>
     <div class="faq-item reveal d1">
       <button class="faq-q" onclick="toggleFaq(this)">How is this different from Byju's, WhiteHat Jr, or Vedantu?
         <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a">Three things: <b>AI-first</b> — we teach real LLMs and tools like GitHub Copilot, not Scratch from 2010. <b>Project-first</b> — every session ends with something shipped, not a worksheet. <b>Community</b> — your child joins a cohort of 8 that codes, competes, and builds together. We're not a content platform. We're a builder's gym.</div>
+      <div class="faq-a">Three things: <b>AI-first</b> - we teach real LLMs and tools like GitHub Copilot, not Scratch from 2010. <b>Project-first</b> - every session ends with something shipped, not a worksheet. <b>Community</b> - your child joins a cohort of 8 that codes, competes, and builds together. We're not a content platform. We're a builder's gym.</div>
     </div>
     <div class="faq-item reveal d2">
       <button class="faq-q" onclick="toggleFaq(this)">Will this interfere with school or board exam prep?
         <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a">It's 4 sessions a month — 6 hours total. Less than one exam coaching weekend. And it actually makes kids better at maths and logic. 78% of our students report improved performance in school subjects within 3 months. College admissions increasingly value project portfolios over ranks alone.</div>
+      <div class="faq-a">It's 4 sessions a month - 6 hours total. Less than one exam coaching weekend. And it actually makes kids better at maths and logic. 78% of our students report improved performance in school subjects within 3 months. College admissions increasingly value project portfolios over ranks alone.</div>
     </div>
     <div class="faq-item reveal d3">
       <button class="faq-q" onclick="toggleFaq(this)">What exactly happens in a session?
@@ -1733,7 +1675,7 @@
       <button class="faq-q" onclick="toggleFaq(this)">What's the refund and cancellation policy?
         <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
       </button>
-      <div class="faq-a">Monthly subscription, cancel any time before the next billing date. For the first 2 weeks: full refund if it's not the right fit — no forms, no back-and-forth, just message us on WhatsApp. We'd rather you leave happy than stay unhappy.</div>
+      <div class="faq-a">Monthly subscription, cancel any time before the next billing date. For the first 2 weeks: full refund if it's not the right fit - no forms, no back-and-forth, just message us on WhatsApp. We'd rather you leave happy than stay unhappy.</div>
     </div>
   </div>
 </section>
@@ -1743,9 +1685,9 @@
   <div class="final-box reveal">
     <div class="final-eyebrow">June 2025 · Seats filling</div>
     <h2>The only education that will matter.<br>Starts here.</h2>
-    <p>Every week you wait is a week your child spends in a world being rebuilt by AI — without the tools to shape it. First 2 weeks are free. Full refund if it's not for them.</p>
+    <p>Every week you wait is a week your child spends in a world being rebuilt by AI - without the tools to shape it. First 2 weeks are free. Full refund if it's not for them.</p>
     <button class="btn final-btn" onclick="openModal()">
-      Reserve a seat — free trial
+      Reserve a seat - free trial
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
     <div class="final-trust">
@@ -1760,46 +1702,7 @@
 
 </main>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo">
-        <span class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4z" fill="#fff"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        Plural<em style="color:var(--saffron)">.</em>
-      </div>
-      <p>Building India's AI generation - one curious kid at a time. From Ladakh to Lakshadweep, every Indian child deserves to be a builder.</p>
-      <p style="margin-top:14px;font-size:0.82rem;">
-        <a href="mailto:hello@plural.ai" style="color:rgba(255,255,255,0.6);text-decoration:none;">hello@plural.ai</a><br/>
-        <a href="https://wa.me/919999999999" style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 99999 99999</a>
-      </p>
-    </div>
-    <div class="footer-col"><h5>Programs</h5><ul>
-      <li><a href="/programs/little-makers.html">Little Makers (8-10)</a></li>
-      <li><a href="/programs/code-explorers.html">Code Explorers (10-13)</a></li>
-      <li><a href="/programs/ai-builders.html">AI Builders (13-18)</a></li>
-      <li><a href="#batches">Live Batches</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Cities</h5><ul>
-      <li><a href="/bangalore.html">Bangalore</a></li>
-      <li><a href="/mumbai.html">Mumbai</a></li>
-      <li><a href="/delhi.html">Delhi</a></li>
-      <li><a href="/hyderabad.html">Hyderabad</a></li>
-    </ul></div>
-    <div class="footer-col"><h5>Company</h5><ul>
-      <li><a href="/about.html">About Us</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/vs-whitehat-jr.html">vs WhiteHat Jr</a></li>
-      <li><a href="/vs-byjus.html">vs Byju's</a></li>
-      <li><a href="/privacy.html">Privacy Policy</a></li>
-      <li><a href="/terms.html">Terms of Use</a></li>
-    </ul></div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Plural Technologies Pvt. Ltd. · CIN: U85300MH2024PTC000000</span>
-    <span>Made with pride in 🇮🇳 India</span>
-  </div>
-</footer>
+<!-- FOOTER injected by nav.js -->
 
 <!-- ════════ SIGNUP MODAL ════════ -->
 <div class="modal-overlay" id="modalOverlay">
@@ -2157,7 +2060,7 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 12);
+  // scroll state handled by nav.js
 }, { passive:true });
 
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
@@ -2236,18 +2139,18 @@ function submitExit() {
 
 /* ════════════ HERO DEMO - VS Code + Copilot → Snake Game ════════════ */
 (function () {
-  const tabs = ['snake.js - VS Code', 'snake.js - Copilot writing...', 'snake.js - Running'];
+  const tabs = ['Session 4 - Game Loops', 'snake.js - Aryan is building...', 'snake.js - Running'];
   const captions = [
-    'A 13-year-old asks GitHub Copilot to build a snake game...',
-    'Copilot writes 52 lines of JavaScript in under a minute...',
-    'The game is live! Built with VS Code + AI in 30 minutes.',
+    'Priya (ex-Google) explains game loops before a single line is written...',
+    'Aryan writes the code himself - Copilot assists, he decides...',
+    'His snake game. His logic. Shipped in one 90-minute session.',
   ];
 
   const stage = document.querySelector('.jr-stage');
   if (!stage) return;
 
   const sceneEls = [
-    document.querySelector('.scene-vscode'),
+    document.querySelector('.scene-lesson'),
     document.querySelector('.scene-codegen'),
     document.querySelector('.scene-game'),
   ];
@@ -2270,26 +2173,37 @@ function submitExit() {
     setStep(n);
   }
 
-  /* ── SCENE 0: type the Copilot prompt ── */
-  const PROMPT = 'Build a snake game with canvas and JS. Add colors, score, and arrow key controls.';
-  let promptTimer;
+  /* ── SCENE 0: mentor lesson — step through concepts ── */
+  const MENTOR_LINES = [
+    'So - every game has one loop running ~60 times per second...',
+    'Each tick: read input, update position, then draw the frame.',
+    'The snake is just a list of {x,y} squares. Easy, right?',
+    'Now YOU write it. I\'ll be here if you get stuck.',
+  ];
+  let lessonTimer;
   function runScene0() {
-    const el = document.getElementById('chatPrompt');
-    const reply = document.getElementById('chatReply');
-    if (!el || !reply) return;
-    el.textContent = '';
-    reply.style.display = 'none';
-    reply.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
-    clearInterval(promptTimer);
-    let i = 0;
-    promptTimer = setInterval(() => {
-      i++;
-      el.textContent = PROMPT.slice(0, i);
-      if (i >= PROMPT.length) {
-        clearInterval(promptTimer);
-        setTimeout(() => { reply.style.display = 'block'; }, 400);
+    const bubble = document.getElementById('lcBubble');
+    const steps = ['cs0','cs1','cs2','cs3'].map(id => document.getElementById(id));
+    if (!bubble) return;
+    clearInterval(lessonTimer);
+    steps.forEach((s, i) => { if (s) s.classList.toggle('cs-done', i === 0); });
+    bubble.textContent = '';
+    let lineIdx = 0, charIdx = 0;
+    function type() {
+      if (lineIdx >= MENTOR_LINES.length) return;
+      const line = MENTOR_LINES[lineIdx];
+      if (charIdx <= line.length) {
+        bubble.textContent = line.slice(0, charIdx);
+        charIdx++;
+        lessonTimer = setTimeout(type, 28);
+      } else {
+        const nextStep = steps[lineIdx + 1];
+        if (nextStep) setTimeout(() => { nextStep.classList.add('cs-done'); }, 400);
+        lineIdx++; charIdx = 0;
+        lessonTimer = setTimeout(type, 900);
       }
-    }, 38);
+    }
+    setTimeout(type, 500);
   }
 
   /* ── SCENE 1: stream code lines ── */
@@ -2336,7 +2250,7 @@ function submitExit() {
     clearInterval(streamTimer);
     let i = 0;
     streamTimer = setInterval(() => {
-      if (i >= CODE_LINES.length) { clearInterval(streamTimer); if(statusEl) statusEl.textContent = '✓ Generated 52 lines · snake.js'; return; }
+      if (i >= CODE_LINES.length) { clearInterval(streamTimer); if(statusEl) statusEl.textContent = 'Built by Aryan · 52 lines · snake.js'; return; }
       const div = document.createElement('div');
       div.className = 'sline';
       div.innerHTML = `<span class="sln">${i+1}</span><span>${CODE_LINES[i][0] || '&nbsp;'}</span>`;
@@ -2492,5 +2406,6 @@ function submitExit() {
 renderBatches();
 </script>
 
+  <script src="/nav.js"></script>
 </body>
 </html>
