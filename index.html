@@ -1,0 +1,2496 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plural - AI &amp; Coding Classes for Kids in India | Ages 8-18</title>
+  <meta name="description" content="India's best AI &amp; coding education for kids aged 8-18. Live online classes with just 8 students per batch. Real projects, real mentors. Try 2 weeks free - full refund guaranteed." />
+
+  <!-- Canonical & Indexing -->
+  <link rel="canonical" href="https://plural.ai/" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#FF6B35" />
+  <meta name="language" content="en-IN" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content="AI coding for kids India, coding classes for kids India, online coding classes children India, learn AI kids, programming for children India, WhiteHat Jr alternative, kids AI education" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://plural.ai/" />
+  <meta property="og:title" content="Plural - AI &amp; Coding Classes for Kids in India | Ages 8-18" />
+  <meta property="og:description" content="India's best AI &amp; coding education for kids aged 8-18. Live online classes, real projects, tiny batches of 8. Try 2 weeks free - full refund guaranteed." />
+  <meta property="og:image" content="https://plural.ai/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Plural - Where India's Kids Learn to Build with AI" />
+  <meta property="og:site_name" content="Plural" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@pluraldotai" />
+  <meta name="twitter:title" content="Plural - AI &amp; Coding Classes for Kids in India | Ages 8-18" />
+  <meta name="twitter:description" content="India's best AI &amp; coding education for kids aged 8-18. Live online classes, real projects, tiny batches of 8. Try 2 weeks free." />
+  <meta name="twitter:image" content="https://plural.ai/og-image.jpg" />
+
+  <!-- Favicon (inline SVG - swap for a real .ico once you have one) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FF6B35'/%3E%3Ctext y='.9em' font-size='72' x='14' fill='white'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <!-- Author & performance hints -->
+  <meta name="author" content="Plural Technologies Pvt. Ltd." />
+  <link rel="preconnect" href="https://i.pravatar.cc" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" fetchpriority="high" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────── */
+    :root {
+      --cream: #FFFBF5;
+      --cream-2: #FFF4E8;
+      --white: #FFFFFF;
+      --ink: #1C1B29;
+      --muted: #6E6B82;
+      --faint: #A8A5B8;
+      --line: #F0EAE0;
+      --line-2: #E8E0D4;
+
+      --saffron: #FF6B35;
+      --saffron-soft: #FFEDE4;
+      --blue: #3D7FFF;
+      --blue-soft: #E6EEFF;
+      --green: #1FBF8F;
+      --green-soft: #DEF7EF;
+      --purple: #8B5CF6;
+      --purple-soft: #EFE8FF;
+      --yellow: #FFB72B;
+      --yellow-soft: #FFF3D6;
+      --pink: #FF5C8A;
+      --pink-soft: #FFE4ED;
+
+      --shadow-sm: 0 2px 8px rgba(28,27,41,0.05);
+      --shadow: 0 8px 30px rgba(28,27,41,0.08);
+      --shadow-lg: 0 20px 60px rgba(28,27,41,0.12);
+      --shadow-color: 0 12px 40px rgba(255,107,53,0.25);
+
+      --r-sm: 14px;
+      --r-md: 22px;
+      --r-lg: 32px;
+      --r-xl: 44px;
+
+      --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .display { font-family: 'Fredoka', sans-serif; }
+
+    /* ─── BLOBS BG ────────────────────────────────────── */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      height: 70px;
+      background: rgba(255,251,245,0.8);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled { border-color: var(--line); box-shadow: var(--shadow-sm); }
+
+    .logo {
+      display: flex; align-items: center; gap: 9px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--saffron), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-color);
+    }
+    .logo em { color: var(--saffron); font-style: normal; }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 600; color: var(--muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      height: 42px; padding: 0 22px; border-radius: 100px;
+      background: var(--ink); color: var(--white) !important;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-weight: 600 !important; cursor: pointer; border: none;
+      font-size: 0.9rem; font-family: inherit;
+      transition: transform 0.2s var(--spring), background 0.2s;
+    }
+    .nav-cta:hover { transform: scale(1.05); background: var(--saffron); }
+
+    /* ─── BUTTONS ─────────────────────────────────────── */
+    .btn {
+      height: 52px; padding: 0 28px; border-radius: 100px;
+      font-size: 0.98rem; font-weight: 700; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center;
+      gap: 9px; border: none; font-family: inherit;
+      transition: transform 0.25s var(--spring), box-shadow 0.3s;
+      letter-spacing: -0.01em;
+    }
+    .btn:hover { transform: translateY(-2px) scale(1.02); }
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary { background: var(--saffron); color: var(--white); box-shadow: var(--shadow-color); }
+    .btn-primary:hover { box-shadow: 0 16px 48px rgba(255,107,53,0.4); }
+
+    .btn-dark { background: var(--ink); color: var(--white); box-shadow: var(--shadow); }
+    .btn-ghost { background: var(--white); color: var(--ink); border: 2px solid var(--line-2); box-shadow: var(--shadow-sm); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    .btn-sm { height: 44px; padding: 0 20px; font-size: 0.88rem; }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      position: relative; z-index: 1;
+      padding: 150px 28px 80px;
+      max-width: 1200px; margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+    }
+
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); border: 1px solid var(--line-2);
+      border-radius: 100px; padding: 7px 8px 7px 16px;
+      font-size: 0.82rem; font-weight: 600; color: var(--muted);
+      box-shadow: var(--shadow-sm); margin-bottom: 32px;
+    }
+    .hero-pill b { color: var(--ink); }
+    .pill-tag {
+      background: var(--green-soft); color: var(--green);
+      padding: 3px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      max-width: 920px; margin: 0 auto 26px;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--saffron), var(--pink) 60%, var(--purple));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero h1 .word {
+      display: inline-block; opacity: 0; transform: translateY(40px) rotate(3deg);
+      animation: pop 0.7s var(--spring) forwards;
+    }
+    @keyframes pop { to { opacity: 1; transform: none; } }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      color: var(--muted); max-width: 560px; line-height: 1.7;
+      margin: 0 auto 40px; opacity: 0;
+      animation: fadeUp 0.7s 0.55s var(--out) forwards;
+    }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(20px);} to {opacity:1; transform:none;} }
+
+    .hero-actions {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.7s 0.7s var(--out) forwards;
+    }
+
+    /* ─── HERO BUILD JOURNEY ──────────────────────────── */
+    .hero-collage {
+      position: relative; margin-top: 64px;
+      max-width: 880px; margin-left: auto; margin-right: auto;
+      opacity: 0; animation: fadeUp 0.9s 0.85s var(--out) forwards;
+    }
+    @keyframes floaty { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+    /* step tracker */
+    .jr-steps { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 22px; }
+    .jr-step { display: flex; align-items: center; gap: 9px; opacity: 0.4; transition: opacity 0.4s; }
+    .jr-step.on { opacity: 1; }
+    .jr-dot {
+      width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 0.9rem;
+      background: var(--white); color: var(--faint); border: 2px solid var(--line-2);
+      transition: all 0.4s var(--spring);
+    }
+    .jr-step.on .jr-dot { background: var(--saffron); color: #fff; border-color: var(--saffron); transform: scale(1.12); box-shadow: var(--shadow-color); }
+    .jr-step.done .jr-dot { background: var(--green); color: #fff; border-color: var(--green); }
+    .jr-text { font-size: 0.86rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
+    .jr-conn { width: 40px; height: 2px; background: var(--line-2); border-radius: 2px; overflow: hidden; position: relative; }
+    .jr-conn i { position: absolute; inset: 0; width: 0; background: var(--saffron); transition: width 0.5s var(--out); }
+    .jr-conn.fill i { width: 100%; }
+
+    /* screen */
+    .jr-screen {
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--line-2);
+      background: #0E1124;
+    }
+    .jr-bar {
+      height: 40px; display: flex; align-items: center; gap: 7px; padding: 0 16px;
+      background: #161A33; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .jr-tl { width: 11px; height: 11px; border-radius: 50%; }
+    .jr-tl.r { background: #FF5F57; } .jr-tl.y { background: #FEBC2E; } .jr-tl.g { background: #28C840; }
+    .jr-tab {
+      margin-left: 12px; font-family: 'Menlo','Monaco',monospace; font-size: 0.76rem;
+      color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.06);
+      padding: 4px 12px; border-radius: 7px;
+    }
+
+    .jr-stage { position: relative; height: 340px; }
+    .jr-scene { position: absolute; inset: 0; opacity: 0; transform: translateY(14px); transition: opacity 0.5s var(--out), transform 0.5s var(--out); pointer-events: none; }
+    .jr-scene.active { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ── token colours (shared across all scenes) ── */
+    .kw{color:#C678DD;} .fn{color:#61AFEF;} .st{color:#98C379;}
+    .cm{color:#5C6370;font-style:italic;} .nm{color:#E5C07B;} .op{color:#56B6C2;}
+    .car{display:inline-block;width:8px;height:1.1em;background:#E5C07B;vertical-align:text-bottom;animation:caret 1s step-end infinite;margin-left:1px;}
+    @keyframes caret{0%,100%{opacity:1;}50%{opacity:0;}}
+
+    /* ── scene 0 : VS Code + Copilot prompt ── */
+    .scene-vscode{display:flex;flex-direction:column;overflow:hidden;}
+    .vsc-layout{display:flex;flex:1;overflow:hidden;min-height:0;}
+    .vsc-sidebar{width:44px;background:#252526;border-right:1px solid #111;display:flex;flex-direction:column;align-items:center;padding:10px 0;gap:14px;flex-shrink:0;}
+    .vsc-sb-icon{width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;opacity:0.45;}
+    .vsc-sb-icon.active{opacity:1;background:rgba(255,255,255,0.1);}
+    .vsc-editor{flex:1;display:flex;flex-direction:column;overflow:hidden;background:#1E1E1E;min-width:0;}
+    .vsc-tabs{display:flex;background:#2D2D2D;border-bottom:1px solid #111;height:33px;flex-shrink:0;}
+    .vsc-tab{display:flex;align-items:center;gap:7px;padding:0 12px;font-size:0.72rem;color:rgba(255,255,255,0.45);border-right:1px solid #1a1a1a;cursor:default;white-space:nowrap;font-family:'Menlo','Monaco',monospace;}
+    .vsc-tab.on{color:#ccc;background:#1E1E1E;border-top:2px solid #007ACC;}
+    .vsc-lines{flex:1;overflow:hidden;padding:10px 0;}
+    .vsc-line{display:flex;align-items:baseline;padding:0 12px;font-family:'Menlo','Monaco',monospace;font-size:0.73rem;line-height:1.75;color:#ABB2BF;}
+    .vsc-ln{color:#3E4451;min-width:24px;text-align:right;margin-right:14px;font-size:0.68rem;user-select:none;}
+    /* Copilot chat panel */
+    .vsc-chat{width:210px;background:#1F1F1F;border-left:1px solid #2a2a2a;display:flex;flex-direction:column;flex-shrink:0;}
+    .chat-head{padding:9px 12px;font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:0.07em;text-transform:uppercase;border-bottom:1px solid #2a2a2a;display:flex;align-items:center;gap:7px;}
+    .copilot-logo{width:14px;height:14px;border-radius:3px;background:linear-gradient(135deg,#0078d4,#005a9e);flex-shrink:0;}
+    .chat-body{flex:1;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:hidden;}
+    .chat-bubble{border-radius:10px;padding:8px 10px;font-size:0.72rem;line-height:1.5;}
+    .chat-user{background:#2A3F5F;color:#A8D8FF;align-self:flex-end;border-bottom-right-radius:2px;max-width:90%;}
+    .chat-ai{background:#252525;color:#ABB2BF;border:1px solid #333;border-bottom-left-radius:2px;}
+    .typing-dot{width:5px;height:5px;border-radius:50%;background:#61AFEF;display:inline-block;margin:0 1px;animation:tp 1.2s ease-in-out infinite;}
+    .typing-dot:nth-child(2){animation-delay:.2s;}.typing-dot:nth-child(3){animation-delay:.4s;}
+    @keyframes tp{0%,80%,100%{transform:scale(0.5);opacity:0.3;}40%{transform:scale(1);opacity:1;}}
+    .vsc-statusbar{height:20px;background:#007ACC;display:flex;align-items:center;padding:0 10px;gap:12px;font-size:0.64rem;color:rgba(255,255,255,0.9);flex-shrink:0;white-space:nowrap;}
+
+    /* ── scene 1 : AI streams the code ── */
+    .scene-codegen{display:flex;flex-direction:column;overflow:hidden;background:#1E1E1E;}
+    .stream-header{display:flex;background:#2D2D2D;border-bottom:1px solid #111;height:33px;align-items:center;padding:0 12px;gap:8px;flex-shrink:0;}
+    .stream-header span{font-size:0.72rem;font-family:'Menlo','Monaco',monospace;color:#ccc;}
+    .stream-lines{flex:1;overflow:hidden;padding:8px 0;}
+    .sline{display:flex;align-items:baseline;padding:0 12px;font-family:'Menlo','Monaco',monospace;font-size:0.73rem;line-height:1.75;color:#ABB2BF;opacity:0;transform:translateX(-4px);}
+    .sline.vis{opacity:1;transform:none;transition:opacity 0.15s,transform 0.15s;}
+    .sln{color:#3E4451;min-width:24px;text-align:right;margin-right:14px;font-size:0.68rem;user-select:none;}
+    .copilot-bar{background:#007ACC;height:20px;display:flex;align-items:center;padding:0 10px;gap:6px;font-size:0.64rem;color:#fff;flex-shrink:0;}
+    .cp-spin{width:9px;height:9px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);border-top-color:#fff;animation:spin 0.7s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+
+    /* ── scene 2 : playable snake game ── */
+    .scene-game{display:flex;align-items:center;justify-content:center;background:#0D1117;gap:18px;padding:12px;}
+    .game-panel{display:flex;flex-direction:column;align-items:center;gap:10px;}
+    #snakeCanvas{border-radius:8px;display:block;image-rendering:pixelated;box-shadow:0 0 28px rgba(0,200,80,0.3);}
+    .game-hud{display:flex;align-items:center;gap:16px;}
+    .game-score-label{font-size:0.75rem;color:rgba(255,255,255,0.4);font-weight:600;letter-spacing:0.05em;}
+    .game-score-val{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.3rem;color:#4EC94E;}
+    .game-sidebar{display:flex;flex-direction:column;gap:8px;min-width:130px;}
+    .game-sidebar-label{font-size:0.64rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+    .game-tool{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:7px;padding:7px 9px;font-size:0.7rem;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:7px;line-height:1.3;}
+    .tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+    .game-hint{font-size:0.65rem;color:rgba(255,255,255,0.25);margin-top:4px;text-align:center;}
+
+    .jr-caption{text-align:center;margin-top:18px;font-size:0.92rem;font-weight:600;color:var(--muted);min-height:1.4em;transition:opacity 0.3s;}
+
+    /* ─── LOGO STRIP ──────────────────────────────────── */
+    .trust {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 90px auto 0; padding: 0 28px;
+      text-align: center;
+    }
+    .trust-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 24px; }
+    .trust-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .trust-chip {
+      background: var(--white); border: 1px solid var(--line); border-radius: 100px;
+      padding: 10px 20px; font-size: 0.85rem; font-weight: 700; color: var(--muted);
+      box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 8px;
+    }
+
+    /* ─── SECTION COMMONS ─────────────────────────────── */
+    .section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 120px 28px; }
+    .section-head { max-width: 640px; margin-bottom: 56px; }
+    .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--saffron); margin-bottom: 16px;
+    }
+    .eyebrow.blue { color: var(--blue); }
+    .eyebrow.green { color: var(--green); }
+    .eyebrow.purple { color: var(--purple); }
+
+    .h2 {
+      font-family: 'Fredoka', sans-serif; font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .lead { font-size: 1.05rem; color: var(--muted); line-height: 1.7; }
+
+    /* ─── REVEAL ──────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s var(--out), transform 0.7s var(--out); }
+    .reveal.in { opacity: 1; transform: none; }
+    .d1{transition-delay:.08s;} .d2{transition-delay:.16s;} .d3{transition-delay:.24s;}
+    .d4{transition-delay:.32s;} .d5{transition-delay:.4s;}
+
+    /* ─── PROGRAMS ────────────────────────────────────── */
+    .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .pcard {
+      background: var(--white); border-radius: var(--r-lg); padding: 34px;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--line);
+      transition: transform 0.35s var(--spring), box-shadow 0.35s;
+      position: relative; overflow: hidden;
+    }
+    .pcard:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .pcard-icon {
+      width: 72px; height: 72px; border-radius: 20px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.4s var(--spring);
+    }
+    .pcard:hover .pcard-icon { transform: scale(1.1) rotate(-6deg); }
+    .pcard-age { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+    .pcard-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.4rem; margin-bottom: 10px; letter-spacing: -0.01em; }
+    .pcard-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.65; margin-bottom: 22px; }
+    .pcard-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .ptag { font-size: 0.74rem; font-weight: 700; padding: 5px 11px; border-radius: 100px; background: var(--cream-2); color: var(--muted); }
+
+    /* ─── HOW (PHOTO + STEPS) ─────────────────────────── */
+    .how-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .how-photo { position: relative; }
+    .how-photo img { width: 100%; border-radius: var(--r-lg); box-shadow: var(--shadow-lg); display: block; aspect-ratio: 4/5; object-fit: cover; border: 6px solid var(--white); }
+    .how-badge {
+      position: absolute; bottom: -18px; right: -18px;
+      background: var(--white); border-radius: 20px; padding: 16px 20px;
+      box-shadow: var(--shadow-lg); text-align: center;
+    }
+    .how-badge-num { font-family: 'Fredoka', sans-serif; font-size: 1.8rem; font-weight: 600; color: var(--saffron); line-height: 1; }
+    .how-badge-label { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+
+    .steps { display: flex; flex-direction: column; gap: 8px; }
+    .step { display: flex; gap: 18px; padding: 18px; border-radius: var(--r-md); transition: background 0.2s; }
+    .step:hover { background: var(--white); box-shadow: var(--shadow-sm); }
+    .step-num {
+      width: 44px; height: 44px; min-width: 44px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--white);
+    }
+    .step-title { font-weight: 700; font-size: 1.02rem; margin-bottom: 4px; }
+    .step-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── IMPACT / INDIA ──────────────────────────────── */
+    .india-wrap { background: var(--cream-2); position: relative; z-index: 1; overflow: hidden; }
+    .india-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .icard {
+      background: var(--white); border-radius: var(--r-md); padding: 30px;
+      box-shadow: var(--shadow-sm); transition: transform 0.3s var(--spring), box-shadow 0.3s;
+      border-top: 4px solid transparent;
+    }
+    .icard:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .icard-icon { width: 58px; height: 58px; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .icard-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 8px; }
+    .icard-text { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── STATEMENT BANNER ────────────────────────────── */
+    .statement {
+      position: relative; z-index: 1; margin: 0 auto; max-width: 1144px;
+      padding: 0 28px;
+    }
+    .statement-inner {
+      background: linear-gradient(135deg, var(--ink) 0%, #2D2B45 100%);
+      border-radius: var(--r-xl); padding: 90px 60px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .statement-inner::before {
+      content:''; position: absolute; top: -120px; right: -80px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,53,0.35), transparent 70%);
+    }
+    .statement-inner::after {
+      content:''; position: absolute; bottom: -140px; left: -60px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,92,246,0.3), transparent 70%);
+    }
+    .statement h2 {
+      font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--white);
+      font-size: clamp(2rem, 4.5vw, 3.6rem); line-height: 1.05; letter-spacing: -0.02em;
+      margin-bottom: 22px; position: relative;
+    }
+    .statement h2 .y { color: var(--yellow); }
+    .statement p { color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; position: relative; }
+
+    /* ─── BATCHES (FUNCTIONAL) ────────────────────────── */
+    .batch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .bcard {
+      background: var(--white); border-radius: var(--r-lg); padding: 30px;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--line);
+      display: flex; flex-direction: column; position: relative; overflow: hidden;
+      transition: transform 0.3s var(--spring), box-shadow 0.3s;
+    }
+    .bcard:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .bcard-flag {
+      position: absolute; top: 18px; right: 18px;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 5px 11px; border-radius: 100px;
+    }
+    .flag-fast { background: var(--pink-soft); color: var(--pink); }
+    .flag-open { background: var(--green-soft); color: var(--green); }
+    .flag-full { background: #F0EAE0; color: var(--faint); }
+
+    .bcard-prog { font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .bcard-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.3rem; margin-bottom: 14px; }
+    .bcard-meta { display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
+    .bmeta-row { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--muted); }
+    .bmeta-row svg { flex-shrink: 0; }
+
+    .bcard-progress { margin-bottom: 18px; }
+    .progress-track { height: 9px; background: var(--cream-2); border-radius: 100px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 100px; transition: width 0.8s var(--out); }
+    .progress-meta { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.78rem; font-weight: 600; }
+    .seats-left { color: var(--saffron); }
+    .seats-total { color: var(--faint); }
+
+    .bcard .btn { width: 100%; justify-content: center; margin-top: auto; }
+    .bcard.is-full { opacity: 0.7; }
+
+    /* ─── COMMUNITY ───────────────────────────────────── */
+    .comm-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px; align-items: center; }
+    .comm-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .comm-photo { border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 1; }
+    .comm-photo.tall { grid-row: span 2; aspect-ratio: auto; }
+    .comm-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .comm-feat { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .comm-feat:last-child { border-bottom: none; }
+    .comm-feat-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+    .comm-feat-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+    .comm-feat-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── STATS STRIP ─────────────────────────────────── */
+    .stats-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; margin-top: 44px; }
+    .stat-box { background: var(--white); border-radius: var(--r-md); padding: 26px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
+    .stat-num { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 2.4rem; line-height: 1; letter-spacing: -0.02em; }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+
+    /* ─── TESTIMONIALS ────────────────────────────────── */
+    .testi-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
+    .testi { background: var(--white); border-radius: var(--r-lg); padding: 34px; box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
+    .testi.feature { background: linear-gradient(135deg, var(--saffron-soft), var(--pink-soft)); border: none; }
+    .testi-quote { font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px; }
+    .testi.feature .testi-quote { font-size: 1.25rem; font-weight: 500; }
+    .testi-author { display: flex; align-items: center; gap: 13px; }
+    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow-sm); }
+    .testi-name { font-weight: 700; font-size: 0.92rem; }
+    .testi-meta { font-size: 0.78rem; color: var(--muted); }
+    .testi-col { display: flex; flex-direction: column; gap: 22px; }
+
+    /* ─── FINAL CTA ───────────────────────────────────── */
+    .final { position: relative; z-index: 1; max-width: 1144px; margin: 0 auto; padding: 0 28px 120px; }
+    .final-box {
+      background: linear-gradient(135deg, var(--saffron), var(--pink) 70%, var(--purple));
+      border-radius: var(--r-xl); padding: 80px 50px; text-align: center;
+      position: relative; overflow: hidden; box-shadow: var(--shadow-lg);
+    }
+    .final-box h2 { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--white); font-size: clamp(2rem,4.5vw,3.4rem); line-height: 1.05; margin-bottom: 16px; }
+    .final-box p { color: rgba(255,255,255,0.92); max-width: 460px; margin: 0 auto 34px; line-height: 1.65; font-size: 1.05rem; }
+    .final-box .btn { background: var(--white); color: var(--saffron); }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    footer { position: relative; z-index: 1; background: var(--ink); color: rgba(255,255,255,0.6); padding: 70px 28px 40px; }
+    .footer-inner { max-width: 1144px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; }
+    .footer-brand .logo { color: var(--white); }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 14px; max-width: 260px; }
+    .footer-col h5 { color: var(--white); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { max-width: 1144px; margin: 50px auto 0; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+
+    /* ─── MODAL ───────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(28,27,41,0.55); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .modal {
+      background: var(--white); border-radius: var(--r-lg); width: 100%; max-width: 480px;
+      max-height: 92vh; overflow-y: auto; box-shadow: var(--shadow-lg);
+      transform: translateY(30px) scale(0.97); transition: transform 0.4s var(--spring);
+      position: relative;
+    }
+    .modal-overlay.open .modal { transform: none; }
+    .modal-head { padding: 28px 30px 0; }
+    .modal-close {
+      position: absolute; top: 20px; right: 20px; width: 34px; height: 34px;
+      border-radius: 50%; border: none; background: var(--cream-2); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--muted);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .modal-close:hover { background: var(--line-2); transform: rotate(90deg); }
+
+    .modal-progress { display: flex; gap: 6px; margin-bottom: 22px; }
+    .mp-dot { height: 5px; flex: 1; border-radius: 100px; background: var(--line-2); transition: background 0.3s; }
+    .mp-dot.active { background: var(--saffron); }
+
+    .modal-step-label { font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--saffron); margin-bottom: 8px; }
+    .modal-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.6rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .modal-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
+
+    .modal-body { padding: 22px 30px 30px; }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; animation: panelIn 0.4s var(--out); }
+    @keyframes panelIn { from { opacity:0; transform: translateX(14px);} to {opacity:1; transform:none;} }
+
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 7px; }
+    .field input, .field select {
+      width: 100%; height: 48px; padding: 0 16px; border-radius: 13px;
+      border: 2px solid var(--line-2); background: var(--cream); font-size: 0.92rem;
+      font-family: inherit; color: var(--ink); outline: none; transition: border-color 0.2s, background 0.2s;
+    }
+    .field input:focus, .field select:focus { border-color: var(--saffron); background: var(--white); }
+    .field input.error { border-color: var(--pink); }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .prog-select { display: flex; flex-direction: column; gap: 10px; }
+    .prog-opt {
+      display: flex; align-items: center; gap: 14px; padding: 14px;
+      border: 2px solid var(--line-2); border-radius: 15px; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .prog-opt:hover { border-color: var(--faint); }
+    .prog-opt.selected { border-color: var(--saffron); background: var(--saffron-soft); }
+    .prog-opt-icon { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .prog-opt-name { font-weight: 700; font-size: 0.95rem; }
+    .prog-opt-age { font-size: 0.78rem; color: var(--muted); }
+    .prog-opt-check { margin-left: auto; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line-2); display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .prog-opt.selected .prog-opt-check { background: var(--saffron); border-color: var(--saffron); }
+
+    .batch-opt {
+      padding: 14px 16px; border: 2px solid var(--line-2); border-radius: 15px;
+      cursor: pointer; margin-bottom: 10px; transition: border-color 0.2s, background 0.2s;
+    }
+    .batch-opt:hover { border-color: var(--faint); }
+    .batch-opt.selected { border-color: var(--saffron); background: var(--saffron-soft); }
+    .batch-opt.disabled { opacity: 0.5; cursor: not-allowed; }
+    .batch-opt-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .batch-opt-name { font-weight: 700; font-size: 0.92rem; }
+    .batch-opt-seats { font-size: 0.76rem; font-weight: 700; color: var(--saffron); }
+    .batch-opt .progress-track { height: 6px; }
+
+    .modal-footer { display: flex; gap: 12px; margin-top: 24px; }
+    .modal-footer .btn { flex: 1; justify-content: center; }
+
+    .success-anim {
+      width: 88px; height: 88px; border-radius: 50%; background: var(--green-soft);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 22px;
+      animation: popIn 0.5s var(--spring);
+    }
+    @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+    .success-check { stroke-dasharray: 50; stroke-dashoffset: 50; animation: draw 0.5s 0.2s var(--out) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    .summary-box { background: var(--cream); border-radius: 15px; padding: 18px; margin: 20px 0; }
+    .summary-row { display: flex; justify-content: space-between; padding: 7px 0; font-size: 0.88rem; }
+    .summary-row .k { color: var(--muted); }
+    .summary-row .v { font-weight: 700; }
+
+    /* ─── TOAST ───────────────────────────────────────── */
+    .toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(120px);
+      background: var(--ink); color: var(--white); padding: 14px 22px; border-radius: 100px;
+      font-size: 0.88rem; font-weight: 600; z-index: 600; box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 10px; transition: transform 0.4s var(--spring);
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ─── PRICING ────────────────────────────────────── */
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 20px; align-items: start; }
+    .price-card {
+      background: var(--white); border: 2px solid var(--line-2); border-radius: var(--r-lg);
+      padding: 32px 28px; position: relative; transition: transform 0.3s var(--spring), box-shadow 0.3s;
+    }
+    .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .price-card.best {
+      border-color: var(--saffron); background: var(--white);
+      transform: scale(1.03);
+      box-shadow: var(--shadow-lg);
+    }
+    .price-card.best:hover { transform: scale(1.03) translateY(-6px); }
+    .best-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--saffron); color: #fff; padding: 5px 18px; border-radius: 100px;
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .price-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.15rem; margin-bottom: 4px; }
+    .price-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .price-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 6px; }
+    .price-amt { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 2.8rem; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+    .price-per { font-size: 0.82rem; color: var(--muted); }
+    .price-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 24px; }
+    .price-sub b { color: var(--green); font-weight: 700; }
+    .price-divider { height: 1px; background: var(--line); margin-bottom: 20px; }
+    .price-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 26px; }
+    .price-feat { display: flex; align-items: flex-start; gap: 10px; font-size: 0.86rem; color: var(--ink); line-height: 1.4; }
+    .feat-check { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .fc-yes { background: var(--green-soft); }
+    .fc-no { background: var(--line-2); }
+    .feat-check svg { display: block; }
+    .price-feat.dim { color: var(--faint); }
+    .price-compare { margin-top: 20px; padding: 14px; background: var(--cream-2); border-radius: var(--r-sm); text-align: center; font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .price-compare b { color: var(--ink); }
+    .price-guarantee { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 40px; }
+    .guarantee-badge { background: var(--green-soft); border: 1.5px solid rgba(31,191,143,0.3); border-radius: 14px; padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+    .guarantee-icon { font-size: 2rem; flex-shrink: 0; }
+    .guarantee-title { font-weight: 700; font-size: 0.95rem; color: var(--green); }
+    .guarantee-sub { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+    /* ─── FAQ ─────────────────────────────────────────── */
+    .faq-wrap { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-q {
+      width: 100%; background: none; border: none; text-align: left; padding: 22px 0;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--ink);
+    }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--cream-2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, transform 0.3s; }
+    .faq-item.open .faq-icon { background: var(--saffron-soft); transform: rotate(45deg); }
+    .faq-a { font-size: 0.92rem; color: var(--muted); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.4s var(--out), padding 0.3s; }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+
+    /* ─── WHATSAPP STICKY ─────────────────────────────── */
+    .wa-btn {
+      position: fixed; bottom: 28px; right: 28px; z-index: 300;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      transition: transform 0.3s var(--spring), box-shadow 0.3s;
+    }
+    .wa-btn:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,0.55); }
+    .wa-pulse {
+      position: fixed; bottom: 28px; right: 28px; z-index: 299;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(37,211,102,0.3);
+      animation: waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse { 0%{transform:scale(1);opacity:1;} 100%{transform:scale(2.2);opacity:0;} }
+
+    /* ─── EXIT INTENT ─────────────────────────────────── */
+    .exit-overlay {
+      position: fixed; inset: 0; z-index: 600;
+      background: rgba(28,27,41,0.65); backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .exit-overlay.open { opacity: 1; pointer-events: auto; }
+    .exit-box {
+      background: var(--white); border-radius: var(--r-xl); max-width: 440px; width: 100%;
+      padding: 48px 40px; text-align: center; position: relative;
+      box-shadow: var(--shadow-lg);
+      transform: scale(0.92); transition: transform 0.4s var(--spring);
+    }
+    .exit-overlay.open .exit-box { transform: scale(1); }
+    .exit-close {
+      position: absolute; top: 16px; right: 16px; width: 32px; height: 32px;
+      border-radius: 50%; border: none; background: var(--cream-2); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--muted);
+    }
+    .exit-emoji { font-size: 3rem; margin-bottom: 16px; }
+    .exit-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.7rem; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .exit-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+    .exit-field { display: flex; gap: 10px; }
+    .exit-field input { flex:1; height: 48px; padding: 0 16px; border-radius: 13px; border: 2px solid var(--line-2); background: var(--cream); font-size: 0.9rem; font-family: inherit; outline: none; }
+    .exit-field input:focus { border-color: var(--saffron); }
+    .exit-skip { margin-top: 14px; font-size: 0.8rem; color: var(--faint); cursor: pointer; }
+    .exit-skip:hover { color: var(--muted); }
+
+    /* ─── LIVE COUNTER ────────────────────────────────── */
+    .live-banner {
+      background: var(--ink); color: rgba(255,255,255,0.85);
+      padding: 12px 20px; display: flex; align-items: center; justify-content: center;
+      gap: 10px; font-size: 0.84rem; font-weight: 600; flex-wrap: wrap;
+    }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 8px #25D366; animation: blink 1.8s infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .live-banner b { color: #fff; }
+
+    /* ─── STAR RATING ─────────────────────────────────── */
+    .stars { color: #FFB72B; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 10px; }
+
+    /* ─── EXPERT SESSIONS ────────────────────────────── */
+    .experts-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 0;
+    }
+    .expert-card {
+      background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md);
+      padding: 24px; display: flex; gap: 16px; align-items: flex-start;
+      transition: transform 0.3s var(--spring), box-shadow 0.3s, border-color 0.3s;
+      cursor: default;
+    }
+    .expert-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--line-2); }
+    .expert-avi {
+      width: 52px; height: 52px; min-width: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .expert-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+    .expert-role { font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
+    .expert-topic {
+      font-size: 0.82rem; color: var(--ink); font-style: italic;
+      border-left: 3px solid var(--saffron); padding-left: 10px; line-height: 1.4;
+    }
+    .expert-card.expert-more {
+      background: linear-gradient(135deg, var(--purple-soft), var(--blue-soft));
+      border-color: rgba(139,92,246,0.2);
+    }
+    .expert-more-icon {
+      width: 52px; height: 52px; min-width: 52px; border-radius: 14px;
+      background: rgba(139,92,246,0.15); display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 300; color: var(--purple); flex-shrink: 0;
+    }
+    .expert-card.expert-more .expert-name { color: var(--purple); }
+    .expert-card.expert-more .expert-topic { border-color: var(--purple); color: var(--purple); font-style: normal; font-weight: 600; }
+    .experts-note {
+      display: flex; align-items: center; gap: 10px; justify-content: center;
+      margin-top: 28px; font-size: 0.84rem; color: var(--muted); text-align: center;
+    }
+
+    /* ─── PROOF BAR ──────────────────────────────────── */
+    .proof-bar {
+      display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+      gap:0; padding:20px 28px; max-width:1000px; margin:0 auto;
+      border-bottom:1px solid var(--line);
+    }
+    .proof-item { display:flex; flex-direction:column; align-items:center; padding:0 32px; }
+    .proof-val { font-family:'Fredoka',sans-serif; font-weight:600; font-size:1.25rem; color:var(--ink); letter-spacing:-0.02em; }
+    .proof-lbl { font-size:0.72rem; color:var(--muted); font-weight:600; letter-spacing:0.04em; text-transform:uppercase; margin-top:2px; }
+    .proof-div { width:1px; height:36px; background:var(--line-2); }
+
+    /* ─── WHY IT MATTERS ─────────────────────────────── */
+    .why-matters { background:var(--ink); position:relative; z-index:1; overflow:hidden; }
+    .why-matters::before {
+      content:''; position:absolute; top:-120px; right:-80px;
+      width:500px; height:500px; border-radius:50%;
+      background:radial-gradient(circle, rgba(255,107,53,0.18), transparent 65%);
+      pointer-events:none;
+    }
+    .wm-inner { max-width:1200px; margin:0 auto; padding:100px 28px; }
+    .wm-head { margin-bottom:56px; }
+    .wm-head .eyebrow { color:rgba(255,107,53,0.8); }
+    .wm-head .h2 { color:#fff; font-size:clamp(2rem,4vw,3.4rem); }
+    .wm-head .h2 em { color:var(--saffron); }
+    .wm-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:52px; }
+    .wm-card {
+      background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+      border-radius:var(--r-md); padding:32px;
+      transition:background 0.3s, transform 0.3s var(--spring);
+    }
+    .wm-card:hover { background:rgba(255,255,255,0.08); transform:translateY(-4px); }
+    .wm-icon { width:54px; height:54px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+    .wm-stat { font-family:'Fredoka',sans-serif; font-weight:600; font-size:2.4rem; color:var(--saffron); line-height:1; margin-bottom:8px; letter-spacing:-0.02em; }
+    .wm-title { font-weight:700; font-size:1rem; color:#fff; margin-bottom:10px; line-height:1.3; }
+    .wm-body { font-size:0.86rem; color:rgba(255,255,255,0.55); line-height:1.65; }
+    .wm-cta { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+    .wm-risk { font-size:0.82rem; color:rgba(255,255,255,0.45); font-weight:500; }
+
+    /* ─── TESTIMONIALS HEADER ────────────────────────── */
+    .testi-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px; flex-wrap:wrap; gap:16px; }
+    .testi-rating { text-align:right; }
+
+    /* ─── FINAL CTA ──────────────────────────────────── */
+    .final-eyebrow { font-size:0.72rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:20px; }
+    .final-btn { background:var(--white); color:var(--saffron); font-size:1.05rem; height:56px; padding:0 32px; }
+    .final-btn:hover { background:var(--cream); }
+    .final-trust { display:flex; align-items:center; gap:12px; justify-content:center; margin-top:20px; font-size:0.8rem; color:rgba(255,255,255,0.6); flex-wrap:wrap; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 980px) {
+      .programs-grid, .india-grid, .batch-grid, .experts-grid, .pricing-grid, .wm-cards { grid-template-columns: 1fr 1fr; }
+      .how-layout, .comm-layout { grid-template-columns: 1fr; gap: 48px; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .float-card { display: none; }
+      .price-card.best { transform: none; }
+      .proof-item { padding: 0 18px; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 18px; }
+      .nav-links { display: none; }
+      .programs-grid, .india-grid, .batch-grid, .experts-grid, .pricing-grid, .wm-cards, .stats-strip, .footer-inner, .field-row { grid-template-columns: 1fr; }
+      .section { padding: 80px 20px; }
+      .final-box { padding: 56px 28px; }
+      .hero { padding: 120px 20px 60px; }
+      .price-card.best { transform: none; }
+      .proof-bar { gap: 12px; }
+      .proof-div { display: none; }
+      .proof-item { padding: 8px 16px; }
+      .wm-inner { padding: 80px 20px; }
+      .testi-header { flex-direction: column; align-items: flex-start; }
+      .testi-rating { text-align: left; }
+    }
+  </style>
+
+  <!-- ═══ STRUCTURED DATA (JSON-LD) ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Plural",
+    "alternateName": "Plural Technologies Pvt. Ltd.",
+    "url": "https://plural.ai",
+    "logo": "https://plural.ai/logo.png",
+    "description": "India's leading AI and coding education platform for children aged 8-18. We teach real AI, Python, and programming through live online classes with tiny batches of 8 students.",
+    "foundingDate": "2024",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "numberOfStudents": 10000,
+    "sameAs": [
+      "https://twitter.com/pluraldotai",
+      "https://linkedin.com/company/plural-ai",
+      "https://instagram.com/pluraldotai",
+      "https://youtube.com/@pluraldotai"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1200",
+      "reviewCount": "1200",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "My child has never coded before. Is Plural too hard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not at all. Plural starts from absolute zero - no prior knowledge needed. The Little Makers program is specifically designed for kids who have never touched code. We make the first session feel like play, not class. Most kids ship something they're proud of in the very first week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much screen time does Plural's online coding program involve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "4 live sessions per month, each 90 minutes = 6 hours/month of live coding class. Between sessions, we encourage offline thinking - sketching ideas, planning what to build - before touching the screen again."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will coding classes at Plural help with school exams or JEE/NEET prep?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Directly? No - we don't teach to boards. Indirectly? Hugely. Coding builds logical thinking, problem decomposition, and attention to detail - skills that transfer to maths and sciences. Many Plural students report improved school performance within 3 months. College admissions increasingly value portfolios and projects too."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can children from any city in India join Plural's coding classes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every Plural batch is live online over Zoom - so your child can join from anywhere in India, no commute needed. We pick the best time slots across IST so kids from Ladakh to Kanyakumari can attend without rearranging their day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Plural different from Byju's, Vedantu, or WhiteHat Jr for coding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three big differences: (1) AI-first - Plural teaches LLMs and modern AI tools, not just Scratch or basic Python. (2) Project-first - every session produces something real, not a certificate. (3) Community - your child joins a network of 10,000+ innovators across India. Plural builds builders, not students."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost of Plural's coding and AI program for kids?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Plural's Builder plan costs ₹5,000 per month (₹1,250 per live session × 4 sessions/month). The first 2 weeks are completely free with a full refund guarantee. This includes live 90-minute sessions, max 8 kids per batch, a real project portfolio, national hackathon access, and weekly WhatsApp parent updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I cancel Plural anytime? What is the refund policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Plural is a monthly subscription - cancel before the next billing date and you won't be charged. For the first 2 weeks, if your child attends even one session and it's not the right fit, we'll refund the full amount. No forms, no back-and-forth."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI & Coding Programs for Kids by Plural",
+    "description": "Age-appropriate AI and coding programs for Indian children aged 8-18",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Course",
+          "name": "Little Makers - Coding for Kids aged 8-10",
+          "description": "The first spark. Robotics, block coding, and playful logic puzzles for kids aged 8-10 in India. No prior coding experience needed.",
+          "provider": { "@type": "Organization", "name": "Plural", "url": "https://plural.ai" },
+          "typicalAgeRange": "8-10",
+          "educationalLevel": "Beginner",
+          "teaches": "Block Coding, Robotics, Logic Puzzles",
+          "courseMode": "online",
+          "inLanguage": "en-IN",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "First 2 weeks free trial" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Course",
+          "name": "Code Explorers - Programming for Kids aged 10-13",
+          "description": "Build games, apps, and websites with real code. Covers JavaScript, Python, and Web Development for kids aged 10-13 in India.",
+          "provider": { "@type": "Organization", "name": "Plural", "url": "https://plural.ai" },
+          "typicalAgeRange": "10-13",
+          "educationalLevel": "Intermediate",
+          "teaches": "JavaScript, Python, Web Development",
+          "courseMode": "online",
+          "inLanguage": "en-IN",
+          "offers": { "@type": "Offer", "price": "5000", "priceCurrency": "INR", "billingPeriod": "P1M" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Course",
+          "name": "AI Builders - AI & Machine Learning for Teens aged 13-18",
+          "description": "LLMs, machine learning, and real APIs. Build AI tools that solve India's problems. For teens aged 13-18.",
+          "provider": { "@type": "Organization", "name": "Plural", "url": "https://plural.ai" },
+          "typicalAgeRange": "13-18",
+          "educationalLevel": "Advanced",
+          "teaches": "Python, LLMs, Machine Learning, AI APIs",
+          "courseMode": "online",
+          "inLanguage": "en-IN",
+          "offers": { "@type": "Offer", "price": "5000", "priceCurrency": "INR", "billingPeriod": "P1M" }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Enroll Your Child in Plural's AI Coding Classes",
+    "description": "Simple 4-step process to get your child started with AI and coding at Plural India",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": "1",
+        "name": "Try free for 2 weeks",
+        "text": "Attend 2 live AI coding sessions at zero cost. Not the right fit? Full refund, no questions asked."
+      },
+      {
+        "@type": "HowToStep",
+        "position": "2",
+        "name": "Join a batch",
+        "text": "Get placed in a small live cohort of 8 kids, matched by age and level, guided by a real mentor."
+      },
+      {
+        "@type": "HowToStep",
+        "position": "3",
+        "name": "Build real projects",
+        "text": "100% project-based learning. Ship a working app in week one and build a portfolio over the term."
+      },
+      {
+        "@type": "HowToStep",
+        "position": "4",
+        "name": "Compete and lead",
+        "text": "Enter national hackathons, win mentorship, and graduate into the Plural alumni network."
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Plural",
+    "url": "https://plural.ai",
+    "description": "AI and coding education for kids in India, ages 8-18",
+    "inLanguage": "en-IN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Plural Technologies Pvt. Ltd.",
+      "url": "https://plural.ai"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Parent & Student Reviews of Plural",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Aryan Sharma" },
+          "reviewBody": "I'm 15, from a small town in Rajasthan. Before Plural, I didn't know coding was something kids like me could do. Now I've built an AI tool that helps local farmers get fair prices. My dad cried when he saw it work.",
+          "itemReviewed": { "@type": "EducationalOrganization", "name": "Plural" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Sunita Iyer" },
+          "reviewBody": "My daughter used to be afraid of math. Now she's debugging Python at 11pm because she 'almost has it'. Plural gave her real confidence.",
+          "itemReviewed": { "@type": "EducationalOrganization", "name": "Plural" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Riya Pandey" },
+          "reviewBody": "We won nationals! Built a flood-prediction model for Bihar. None of us had met before Plural — now we're best friends building things that matter.",
+          "itemReviewed": { "@type": "EducationalOrganization", "name": "Plural" }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Plural — AI & Coding Classes for Kids in India",
+    "url": "https://plural.ai/",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero h1", ".hero-sub", ".section-head .h2", ".faq-q", ".faq-a"]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://plural.ai/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Programs",
+        "item": "https://plural.ai/#programs"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- SKIP LINK (accessibility + SEO landmark) -->
+<a href="#main-content" style="position:absolute;left:-9999px;top:0;z-index:9999;background:#FF6B35;color:#fff;padding:10px 20px;border-radius:0 0 8px 8px;font-weight:700;text-decoration:none;" onfocus="this.style.left='0'" onblur="this.style.left='-9999px'">Skip to main content</a>
+
+<!-- BACKGROUND BLOBS -->
+<div class="blob" style="width:420px;height:420px;background:var(--saffron);top:-60px;left:-100px;opacity:0.18;"></div>
+<div class="blob" style="width:380px;height:380px;background:var(--blue);top:200px;right:-120px;opacity:0.14;"></div>
+<div class="blob" style="width:340px;height:340px;background:var(--purple);top:1400px;left:-80px;opacity:0.12;"></div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
+  <a href="#" class="logo">
+    <span class="logo-mark">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4z" fill="#fff"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+    Plural<em>.</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#experts">Experts</a></li>
+    <li><a href="#batches">Batches</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">
+    Reserve a seat
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </button>
+</nav>
+
+<main id="main-content" role="main">
+
+<!-- LIVE COUNTER BANNER -->
+<div class="live-banner" id="liveBanner">
+  <span class="live-dot"></span>
+  <span><b id="liveFamilies">47</b> families joined this week · <b id="liveSeats">9</b> seats left across all June batches</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-pill">
+    <span class="pill-tag">JUNE 2025</span>
+    <span><b id="liveFamilies2">47</b> families enrolled this week · <b id="liveSeats2">9</b> seats left</span>
+  </div>
+
+  <h1>
+    <span class="word" style="animation-delay:.05s">The only</span>
+    <span class="word" style="animation-delay:.15s">education</span>
+    <span class="word" style="animation-delay:.25s">that will</span>
+    <br>
+    <span class="word grad" style="animation-delay:.35s">matter&nbsp;in&nbsp;the&nbsp;age&nbsp;of&nbsp;AI.</span>
+  </h1>
+
+  <p class="hero-sub">
+    AI is rewriting every industry. Schools are 20 years behind. Plural teaches India's kids to build with AI — real tools, real projects, real mentors — before the window closes.
+  </p>
+
+  <div class="hero-actions">
+    <button class="btn btn-primary" onclick="openModal()">
+      Start free — 2 weeks on us
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <a href="#how" class="btn btn-ghost">See how it works</a>
+  </div>
+
+  <!-- BUILD JOURNEY ANIMATION -->
+  <div class="hero-collage">
+    <div class="journey">
+      <!-- step tracker -->
+      <div class="jr-steps">
+        <div class="jr-step" data-step="0">
+          <span class="jr-dot">1</span>
+          <span class="jr-text">Ask Copilot</span>
+        </div>
+        <div class="jr-conn"><i></i></div>
+        <div class="jr-step" data-step="1">
+          <span class="jr-dot">2</span>
+          <span class="jr-text">AI writes the code</span>
+        </div>
+        <div class="jr-conn"><i></i></div>
+        <div class="jr-step" data-step="2">
+          <span class="jr-dot">3</span>
+          <span class="jr-text">Play the game!</span>
+        </div>
+      </div>
+
+      <!-- screen -->
+      <div class="jr-screen">
+        <div class="jr-bar">
+          <span class="jr-tl r"></span><span class="jr-tl y"></span><span class="jr-tl g"></span>
+          <span class="jr-tab" id="jrTab">snake.js - VS Code</span>
+        </div>
+
+        <div class="jr-stage">
+
+          <!-- SCENE 0 · VS Code + Copilot prompt -->
+          <div class="jr-scene scene-vscode active">
+            <div class="vsc-layout">
+              <!-- sidebar icons -->
+              <div class="vsc-sidebar">
+                <div class="vsc-sb-icon active">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                </div>
+                <div class="vsc-sb-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                </div>
+                <div class="vsc-sb-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 00-.9-2.4c3-.3 6.2-1.5 6.2-6.8a5.3 5.3 0 00-1.4-3.7 4.9 4.9 0 00-.1-3.6s-1.1-.4-3.7 1.4a12.7 12.7 0 00-6.8 0C6.2 2.4 5 2.8 5 2.8a4.9 4.9 0 00-.1 3.6A5.3 5.3 0 003.5 10c0 5.3 3.2 6.5 6.2 6.8a3.4 3.4 0 00-.9 2.4V22"/></svg>
+                </div>
+              </div>
+              <!-- editor with some starter code visible -->
+              <div class="vsc-editor">
+                <div class="vsc-tabs">
+                  <div class="vsc-tab on">snake.js</div>
+                </div>
+                <div class="vsc-lines">
+                  <div class="vsc-line"><span class="vsc-ln">1</span><span><span class="cm">// snake game starter</span></span></div>
+                  <div class="vsc-line"><span class="vsc-ln">2</span><span><span class="kw">const</span> canvas = <span class="fn">document</span>.<span class="fn">getElementById</span>(<span class="st">'c'</span>);</span></div>
+                  <div class="vsc-line"><span class="vsc-ln">3</span><span><span class="kw">const</span> ctx = canvas.<span class="fn">getContext</span>(<span class="st">'2d'</span>);</span></div>
+                  <div class="vsc-line"><span class="vsc-ln">4</span><span></span></div>
+                  <div class="vsc-line"><span class="vsc-ln">5</span><span><span class="cm">// TODO: add snake logic</span></span></div>
+                  <div class="vsc-line"><span class="vsc-ln">6</span><span><span class="car"></span></span></div>
+                </div>
+                <div class="vsc-statusbar">
+                  <span>JavaScript</span>
+                  <span>UTF-8</span>
+                  <span style="margin-left:auto;display:flex;align-items:center;gap:5px;">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="white" opacity="0.7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+                    GitHub Copilot
+                  </span>
+                </div>
+              </div>
+              <!-- copilot chat -->
+              <div class="vsc-chat">
+                <div class="chat-head">
+                  <div class="copilot-logo"></div>
+                  Copilot Chat
+                </div>
+                <div class="chat-body">
+                  <div class="chat-bubble chat-user" id="chatPrompt"></div>
+                  <div class="chat-bubble chat-ai" id="chatReply" style="display:none;">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE 1 · AI streams the game code -->
+          <div class="jr-scene scene-codegen">
+            <div class="stream-header">
+              <div class="cp-spin"></div>
+              <span>snake.js</span>
+              <span style="color:rgba(255,255,255,0.3);margin-left:auto;">GitHub Copilot is writing...</span>
+            </div>
+            <div class="stream-lines" id="streamLines"></div>
+            <div class="copilot-bar">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+              <span id="copilotStatus">Generating snake game...</span>
+            </div>
+          </div>
+
+          <!-- SCENE 2 · Playable snake game -->
+          <div class="jr-scene scene-game">
+            <div class="game-panel">
+              <canvas id="snakeCanvas" width="252" height="252"></canvas>
+              <div class="game-hud">
+                <span class="game-score-label">SCORE</span>
+                <span class="game-score-val" id="gameScore">0</span>
+              </div>
+              <div class="game-hint">Use ↑ ↓ ← → to play · auto-plays on demo</div>
+            </div>
+            <div class="game-sidebar">
+              <div class="game-sidebar-label">Built with</div>
+              <div class="game-tool"><span class="tdot" style="background:#007ACC;"></span>VS Code</div>
+              <div class="game-tool"><span class="tdot" style="background:#fff;"></span>GitHub Copilot</div>
+              <div class="game-tool"><span class="tdot" style="background:#F7DF1E;"></span>JavaScript</div>
+              <div class="game-tool" style="margin-top:4px;border-color:rgba(78,201,78,0.3);color:#4EC94E;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Shipped in 30 min 🚀
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="jr-caption" id="jrCaption">A 13-year-old asks GitHub Copilot to build a snake game...</div>
+    </div>
+  </div>
+</header>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar reveal">
+  <div class="proof-item"><span class="proof-val">10,000+</span><span class="proof-lbl">young builders</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-val">4.9 / 5</span><span class="proof-lbl">parent rating</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-val">500+</span><span class="proof-lbl">projects shipped</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-val">28 states</span><span class="proof-lbl">across India</span></div>
+  <div class="proof-div"></div>
+  <div class="proof-item"><span class="proof-val">120+ schools</span><span class="proof-lbl">partnered</span></div>
+</div>
+
+<!-- WHY THIS IS THE ONLY EDUCATION THAT MATTERS -->
+<section class="why-matters">
+  <div class="wm-inner">
+    <div class="wm-head reveal">
+      <div class="eyebrow" style="color:var(--saffron);">The shift is already here</div>
+      <h2 class="h2">AI is not the future.<br>It is the <em style="color:var(--saffron);font-style:normal;">present.</em><br>And school isn't teaching it.</h2>
+    </div>
+    <div class="wm-cards">
+      <div class="wm-card reveal">
+        <div class="wm-icon" style="background:var(--saffron-soft);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="wm-stat">85%</div>
+        <div class="wm-title">of jobs by 2030 will need AI skills</div>
+        <p class="wm-body">World Economic Forum. The curriculum your child studies today was designed for a world that no longer exists.</p>
+      </div>
+      <div class="wm-card reveal d1">
+        <div class="wm-icon" style="background:var(--blue-soft);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3D7FFF" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="wm-stat">Age 8-18</div>
+        <div class="wm-title">is the window that defines everything</div>
+        <p class="wm-body">Cognitive plasticity peaks here. Habits, mental models, and confidence are set for life. This is the only moment that matters.</p>
+      </div>
+      <div class="wm-card reveal d2">
+        <div class="wm-icon" style="background:var(--green-soft);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="wm-stat">600M</div>
+        <div class="wm-title">Indians under 25 — waiting to build</div>
+        <p class="wm-body">India's biggest advantage isn't resources. It's people. The child who learns to build with AI today becomes the architect of tomorrow's India.</p>
+      </div>
+    </div>
+    <div class="wm-cta reveal">
+      <button class="btn btn-primary" onclick="openModal()">Start building today</button>
+      <span class="wm-risk">2 weeks free · full refund if not the right fit</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section" id="programs" aria-label="Programs">
+  <div class="section-head center reveal">
+    <div class="eyebrow" style="justify-content:center;display:flex;">✦ Programs</div>
+    <h2 class="h2">Pick the right launchpad</h2>
+    <p class="lead">Age-appropriate tracks that grow with your child - from their very first block of code to shipping real AI tools.</p>
+  </div>
+
+  <div class="programs-grid">
+    <div class="pcard reveal">
+      <div class="pcard-icon" style="background:var(--green-soft)">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22c4-2 7-5 7-11V5l-7-3-7 3v6c0 6 3 9 7 11z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="pcard-age" style="color:var(--green)">Ages 8-10 · Beginner</div>
+      <div class="pcard-name">Little Makers</div>
+      <p class="pcard-desc">The first spark. Robotics, block coding, and playful logic puzzles. No experience needed - just curiosity.</p>
+      <div class="pcard-tags"><span class="ptag">Block Coding</span><span class="ptag">Robotics</span><span class="ptag">Logic</span></div>
+    </div>
+
+    <div class="pcard reveal d1">
+      <div class="pcard-icon" style="background:var(--blue-soft)">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#3D7FFF" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 18v3M7 9l2 2-2 2M13 13h3"/></svg>
+      </div>
+      <div class="pcard-age" style="color:var(--blue)">Ages 10-13 · Intermediate</div>
+      <div class="pcard-name">Code Explorers</div>
+      <p class="pcard-desc">From "using" to "making". Build games, apps, and websites with real code and real creative projects.</p>
+      <div class="pcard-tags"><span class="ptag">JavaScript</span><span class="ptag">Python</span><span class="ptag">Web Dev</span></div>
+    </div>
+
+    <div class="pcard reveal d2">
+      <div class="pcard-icon" style="background:var(--saffron-soft)">
+        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2"><rect x="5" y="8" width="14" height="12" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8V4M9 4h6M9 14h.01M15 14h.01M2 13h3M19 13h3"/></svg>
+      </div>
+      <div class="pcard-age" style="color:var(--saffron)">Ages 13-18 · Advanced</div>
+      <div class="pcard-name">AI Builders</div>
+      <p class="pcard-desc">LLMs, machine learning, and real APIs. Build AI tools that solve India's problems - portfolio-worthy by 16.</p>
+      <div class="pcard-tags"><span class="ptag">Python</span><span class="ptag">LLMs</span><span class="ptag">ML</span><span class="ptag">APIs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" style="padding-top:40px;" aria-label="How It Works">
+  <div class="how-layout">
+    <div class="how-photo reveal">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Young Indian student coding on a laptop in Plural's live online AI and programming class" width="900" height="1125" loading="eager" fetchpriority="high" onerror="this.style.background='linear-gradient(135deg,var(--blue-soft),var(--purple-soft))';this.removeAttribute('src')" />
+      <div class="how-badge">
+        <div class="how-badge-num">2 wks</div>
+        <div class="how-badge-label">full refund</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow blue reveal">✦ How it works</div>
+      <h2 class="h2 reveal d1">From curious to creator</h2>
+      <div class="steps" style="margin-top:24px;">
+        <div class="step reveal d1">
+          <div class="step-num" style="background:var(--green)">1</div>
+          <div><div class="step-title">Try free for 2 weeks</div><div class="step-desc">Attend 2 live sessions at zero cost. Not the right fit? Full refund, no questions asked.</div></div>
+        </div>
+        <div class="step reveal d2">
+          <div class="step-num" style="background:var(--blue)">2</div>
+          <div><div class="step-title">Join a batch</div><div class="step-desc">Get placed in a small live cohort of 8 kids, matched by age and level, guided by a real mentor.</div></div>
+        </div>
+        <div class="step reveal d3">
+          <div class="step-num" style="background:var(--saffron)">3</div>
+          <div><div class="step-title">Build real projects</div><div class="step-desc">100% project-based. Ship a working app in week one and a portfolio over the term.</div></div>
+        </div>
+        <div class="step reveal d4">
+          <div class="step-num" style="background:var(--purple)">4</div>
+          <div><div class="step-title">Compete &amp; lead</div><div class="step-desc">Enter national hackathons, win mentorship, and graduate into the Plural alumni network.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERT SESSIONS -->
+<section class="section" id="experts" style="padding-top:40px;">
+  <div class="section-head center reveal">
+    <div class="eyebrow purple" style="justify-content:center;display:flex;">✦ Expert Sessions</div>
+    <h2 class="h2">Once a month, your child sits<br>across from India's best builders.</h2>
+    <p class="lead">Not a pre-recorded video. A live conversation. Ask anything.</p>
+  </div>
+
+  <div class="experts-grid reveal d1">
+    <div class="expert-card">
+      <div class="expert-avi" style="background:linear-gradient(135deg,var(--saffron),var(--pink))">🧑‍💻</div>
+      <div class="expert-info">
+        <div class="expert-name">Deepinder Goyal</div>
+        <div class="expert-role">Co-founder & CEO, Zomato</div>
+        <div class="expert-topic">"Building products at 10x speed with AI"</div>
+      </div>
+    </div>
+    <div class="expert-card">
+      <div class="expert-avi" style="background:linear-gradient(135deg,var(--blue),var(--purple))">👩‍🔬</div>
+      <div class="expert-info">
+        <div class="expert-name">Priya Nair</div>
+        <div class="expert-role">AI Research Lead, Google DeepMind India</div>
+        <div class="expert-topic">"How LLMs actually work - from the inside"</div>
+      </div>
+    </div>
+    <div class="expert-card">
+      <div class="expert-avi" style="background:linear-gradient(135deg,var(--green),var(--blue))">🧑‍🚀</div>
+      <div class="expert-info">
+        <div class="expert-name">Kunal Shah</div>
+        <div class="expert-role">Founder, CRED</div>
+        <div class="expert-topic">"Why problem-solving is the only real skill"</div>
+      </div>
+    </div>
+    <div class="expert-card">
+      <div class="expert-avi" style="background:linear-gradient(135deg,var(--purple),var(--pink))">👩‍💼</div>
+      <div class="expert-info">
+        <div class="expert-name">Shalini Kapoor</div>
+        <div class="expert-role">VP Engineering, Razorpay</div>
+        <div class="expert-topic">"What a real engineering career looks like at 25"</div>
+      </div>
+    </div>
+    <div class="expert-card">
+      <div class="expert-avi" style="background:linear-gradient(135deg,var(--yellow),var(--saffron))">🧑‍🏫</div>
+      <div class="expert-info">
+        <div class="expert-name">Prof. Arvind Gupta</div>
+        <div class="expert-role">IIT Bombay · MIT Media Lab alumnus</div>
+        <div class="expert-topic">"Making things with your hands and your mind"</div>
+      </div>
+    </div>
+    <div class="expert-card expert-more">
+      <div class="expert-more-icon">+</div>
+      <div class="expert-info">
+        <div class="expert-name">New expert every month</div>
+        <div class="expert-role">Founders · Engineers · Researchers</div>
+        <div class="expert-topic">Live Q&amp;A - your child can ask anything</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="experts-note reveal">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 8v4l3 3"/></svg>
+    Sessions are recorded and available to all enrolled students · Live attendance gets priority Q&amp;A slots
+  </div>
+</section>
+
+<!-- LIVE BATCHES (FUNCTIONAL) -->
+<section class="section" id="batches" aria-label="Live Batches">
+  <div class="section-head center reveal">
+    <div class="eyebrow purple" style="justify-content:center;display:flex;">✦ Live Batches</div>
+    <h2 class="h2">Live online batches - join from anywhere</h2>
+    <p class="lead">Every session is live on Zoom with a real mentor and max 8 kids. Intimate, interactive, personal - not a recorded video course.</p>
+  </div>
+
+  <div class="batch-grid" id="batchGrid"><!-- rendered by JS --></div>
+
+  <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:32px;" class="reveal">
+    Don't see a time that works? <a href="#" onclick="openModal();return false;" style="color:var(--saffron);font-weight:700;text-decoration:none;">Join the waitlist</a> and we'll match you to a new slot.
+  </p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="stories" style="padding-top:40px;">
+  <div class="testi-header reveal">
+    <div>
+      <div class="eyebrow">What families say</div>
+      <h2 class="h2" style="margin-bottom:0;">Real kids. Real results.</h2>
+    </div>
+    <div class="testi-rating">
+      <div class="stars" style="font-size:1.1rem;">★★★★★</div>
+      <div style="font-size:0.95rem;font-weight:700;color:var(--ink);">4.9 / 5</div>
+      <div style="font-size:0.8rem;color:var(--muted);">from 2,400+ parents</div>
+    </div>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi feature reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-quote">"Before Plural, I didn't know coding was something kids like me could do. Now I've built an AI tool that helps farmers get fair prices for their wheat. My dad cried when he saw it work."</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="https://i.pravatar.cc/96?img=12" alt="Aryan" width="48" height="48" loading="lazy" onerror="this.style.background='var(--saffron)';this.removeAttribute('src')" />
+        <div>
+          <div class="testi-name">Aryan Sharma, 15</div>
+          <div class="testi-meta">AI Builders · Ajmer, Rajasthan</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-col">
+      <div class="testi reveal d1">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">"My daughter used to be scared of maths. Now she's debugging Python at 11pm because she 'almost has it'. The confidence Plural gave her is worth every rupee."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://i.pravatar.cc/96?img=45" alt="Sunita" width="48" height="48" loading="lazy" onerror="this.style.background='var(--blue)';this.removeAttribute('src')" />
+          <div><div class="testi-name">Sunita Iyer</div><div class="testi-meta">Parent · Bengaluru</div></div>
+        </div>
+      </div>
+      <div class="testi reveal d2">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">"We won nationals. Built a flood-prediction model for Bihar. None of us had met before Plural. Now we're best friends shipping things that actually matter."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="https://i.pravatar.cc/96?img=32" alt="Riya" width="48" height="48" loading="lazy" onerror="this.style.background='var(--green)';this.removeAttribute('src')" />
+          <div><div class="testi-name">Riya Pandey, 16</div><div class="testi-meta">Hackathon Champion · Patna</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing" style="padding-top:40px;" aria-label="Pricing">
+  <div class="section-head center reveal">
+    <div class="eyebrow" style="justify-content:center;display:flex;color:var(--green);">Simple pricing</div>
+    <h2 class="h2">Start free. Stay because it works.</h2>
+    <p class="lead">Less than one coaching class per week. More than any coaching class will ever give.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-name">Free Trial</div>
+      <div class="price-desc">No card. No commitment. Just try it.</div>
+      <div class="price-amount"><span class="price-amt" style="color:var(--green)">₹0</span></div>
+      <div class="price-sub">First 2 weeks, full refund guaranteed</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>2 live sessions on Zoom</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Batch WhatsApp group access</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Ships something real in week 1</li>
+        <li class="price-feat dim"><span class="feat-check fc-no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#A8A5B8" stroke-width="2.5"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></span>Hackathons &amp; portfolio</li>
+        <li class="price-feat dim"><span class="feat-check fc-no"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#A8A5B8" stroke-width="2.5"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></span>Expert sessions</li>
+      </ul>
+      <button class="btn btn-ghost" style="width:100%;justify-content:center;" onclick="openModal()">Start free</button>
+    </div>
+
+    <div class="price-card best reveal d1">
+      <div class="best-badge">Most popular</div>
+      <div class="price-name">Builder</div>
+      <div class="price-desc">The full Plural experience. Cancel anytime.</div>
+      <div class="price-amount"><span class="price-amt">₹5,000</span><span class="price-per">/month</span></div>
+      <div class="price-sub">= <b>₹1,250 per 90-min session</b> · 4 sessions/month</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>4 live sessions/month, max 8 kids</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Real project portfolio, yours to keep</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Monthly expert session (live Q&amp;A)</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>National hackathon circuit access</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Weekly WhatsApp update for parents</li>
+      </ul>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="openModal()">Reserve a seat</button>
+      <div class="price-compare">Byju's costs ₹80K/yr. Coaching ₹10K/mo.<br>Plural is ₹5K/mo — and actually teaches the future.</div>
+    </div>
+
+    <div class="price-card reveal d2">
+      <div class="price-name">Schools</div>
+      <div class="price-desc">Bring Plural to your school or group.</div>
+      <div class="price-amount"><span class="price-amt" style="font-size:2rem;">Custom</span></div>
+      <div class="price-sub">10+ students · volume pricing</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Everything in Builder</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Dedicated batch for your school</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Teacher training included</li>
+        <li class="price-feat"><span class="feat-check fc-yes"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></span>Co-branded hackathon</li>
+      </ul>
+      <a href="https://wa.me/919999999999?text=Hi, I want to bring Plural to my school." class="btn btn-ghost" style="width:100%;justify-content:center;" target="_blank">Talk to us</a>
+      <div class="price-compare">120+ schools partnered. July slots open.</div>
+    </div>
+  </div>
+
+  <div class="price-guarantee reveal">
+    <div class="guarantee-badge">
+      <span class="guarantee-icon">🛡️</span>
+      <div>
+        <div class="guarantee-title">2-Week Full Refund Guarantee</div>
+        <div class="guarantee-sub">Not the right fit? We'll refund every rupee. No forms, no questions, no awkwardness.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:40px;" aria-label="FAQ">
+  <div class="section-head center reveal">
+    <div class="eyebrow" style="justify-content:center;display:flex;color:var(--purple);">FAQ</div>
+    <h2 class="h2">Every question parents ask</h2>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">My child has never coded. Is this too hard?
+        <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a">Not at all. We start from zero — no prior knowledge, no prior interest in computers required. The first session feels like play. Most kids build something they're proud of in week one.</div>
+    </div>
+    <div class="faq-item reveal d1">
+      <button class="faq-q" onclick="toggleFaq(this)">How is this different from Byju's, WhiteHat Jr, or Vedantu?
+        <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a">Three things: <b>AI-first</b> — we teach real LLMs and tools like GitHub Copilot, not Scratch from 2010. <b>Project-first</b> — every session ends with something shipped, not a worksheet. <b>Community</b> — your child joins a cohort of 8 that codes, competes, and builds together. We're not a content platform. We're a builder's gym.</div>
+    </div>
+    <div class="faq-item reveal d2">
+      <button class="faq-q" onclick="toggleFaq(this)">Will this interfere with school or board exam prep?
+        <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a">It's 4 sessions a month — 6 hours total. Less than one exam coaching weekend. And it actually makes kids better at maths and logic. 78% of our students report improved performance in school subjects within 3 months. College admissions increasingly value project portfolios over ranks alone.</div>
+    </div>
+    <div class="faq-item reveal d3">
+      <button class="faq-q" onclick="toggleFaq(this)">What exactly happens in a session?
+        <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a">90 minutes on Zoom. Max 8 kids and 1 mentor. First 20 minutes: review what you built last time. Next 60 minutes: build something new together. Last 10 minutes: share with the batch. No lectures, no slides, no passive learning. Every child leaves with code that runs.</div>
+    </div>
+    <div class="faq-item reveal d4">
+      <button class="faq-q" onclick="toggleFaq(this)">What's the refund and cancellation policy?
+        <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a">Monthly subscription, cancel any time before the next billing date. For the first 2 weeks: full refund if it's not the right fit — no forms, no back-and-forth, just message us on WhatsApp. We'd rather you leave happy than stay unhappy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final">
+  <div class="final-box reveal">
+    <div class="final-eyebrow">June 2025 · Seats filling</div>
+    <h2>The only education that will matter.<br>Starts here.</h2>
+    <p>Every week you wait is a week your child spends in a world being rebuilt by AI — without the tools to shape it. First 2 weeks are free. Full refund if it's not for them.</p>
+    <button class="btn final-btn" onclick="openModal()">
+      Reserve a seat — free trial
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <div class="final-trust">
+      <span>🛡️ Full refund guaranteed</span>
+      <span>·</span>
+      <span>🎥 Live on Zoom</span>
+      <span>·</span>
+      <span>👨‍💻 Max 8 kids per batch</span>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7l8-4 8 4-8 4-8-4z" fill="#fff"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Plural<em style="color:var(--saffron)">.</em>
+      </div>
+      <p>Building India's AI generation - one curious kid at a time. From Ladakh to Lakshadweep, every Indian child deserves to be a builder.</p>
+      <p style="margin-top:14px;font-size:0.82rem;">
+        <a href="mailto:hello@plural.ai" style="color:rgba(255,255,255,0.6);text-decoration:none;">hello@plural.ai</a><br/>
+        <a href="https://wa.me/919999999999" style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 99999 99999</a>
+      </p>
+    </div>
+    <div class="footer-col"><h5>Programs</h5><ul>
+      <li><a href="/programs/little-makers.html">Little Makers (8-10)</a></li>
+      <li><a href="/programs/code-explorers.html">Code Explorers (10-13)</a></li>
+      <li><a href="/programs/ai-builders.html">AI Builders (13-18)</a></li>
+      <li><a href="#batches">Live Batches</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Cities</h5><ul>
+      <li><a href="/bangalore.html">Bangalore</a></li>
+      <li><a href="/mumbai.html">Mumbai</a></li>
+      <li><a href="/delhi.html">Delhi</a></li>
+      <li><a href="/hyderabad.html">Hyderabad</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Company</h5><ul>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/vs-whitehat-jr.html">vs WhiteHat Jr</a></li>
+      <li><a href="/vs-byjus.html">vs Byju's</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+      <li><a href="/terms.html">Terms of Use</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Plural Technologies Pvt. Ltd. · CIN: U85300MH2024PTC000000</span>
+    <span>Made with pride in 🇮🇳 India</span>
+  </div>
+</footer>
+
+<!-- ════════ SIGNUP MODAL ════════ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="modal-head">
+      <div class="modal-progress">
+        <div class="mp-dot active" data-dot="1"></div>
+        <div class="mp-dot" data-dot="2"></div>
+        <div class="mp-dot" data-dot="3"></div>
+        <div class="mp-dot" data-dot="4"></div>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <!-- STEP 1: PROGRAM -->
+      <div class="step-panel active" data-panel="1">
+        <div class="modal-step-label">Step 1 of 4</div>
+        <div class="modal-title">Which program fits?</div>
+        <p class="modal-desc">Pick the track that matches your child's age. You can change this anytime.</p>
+        <div class="prog-select" style="margin-top:20px;">
+          <div class="prog-opt" data-program="Little Makers" data-age="8-10" onclick="selectProgram(this)">
+            <div class="prog-opt-icon" style="background:var(--green-soft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22c4-2 7-5 7-11V5l-7-3-7 3v6c0 6 3 9 7 11z"/></svg></div>
+            <div><div class="prog-opt-name">Little Makers</div><div class="prog-opt-age">Ages 8-10 · Beginner</div></div>
+            <div class="prog-opt-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div>
+          </div>
+          <div class="prog-opt" data-program="Code Explorers" data-age="10-13" onclick="selectProgram(this)">
+            <div class="prog-opt-icon" style="background:var(--blue-soft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3D7FFF" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 9l2 2-2 2M13 13h3"/></svg></div>
+            <div><div class="prog-opt-name">Code Explorers</div><div class="prog-opt-age">Ages 10-13 · Intermediate</div></div>
+            <div class="prog-opt-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div>
+          </div>
+          <div class="prog-opt" data-program="AI Builders" data-age="13-18" onclick="selectProgram(this)">
+            <div class="prog-opt-icon" style="background:var(--saffron-soft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2"><rect x="5" y="8" width="14" height="12" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8V4M9 4h6"/></svg></div>
+            <div><div class="prog-opt-name">AI Builders</div><div class="prog-opt-age">Ages 13-18 · Advanced</div></div>
+            <div class="prog-opt-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="goStep(2)">Continue</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: BATCH -->
+      <div class="step-panel" data-panel="2">
+        <div class="modal-step-label">Step 2 of 4</div>
+        <div class="modal-title">Choose a batch</div>
+        <p class="modal-desc">Live seat counts - grab one before it fills.</p>
+        <div id="modalBatchList" style="margin-top:20px;"></div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost btn-sm" onclick="goStep(1)">Back</button>
+          <button class="btn btn-primary" onclick="goStep(3)">Continue</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: DETAILS -->
+      <div class="step-panel" data-panel="3">
+        <div class="modal-step-label">Step 3 of 4</div>
+        <div class="modal-title">Almost there!</div>
+        <p class="modal-desc">You'll get the Zoom link + WhatsApp group invite before the first session.</p>
+        <div style="margin-top:20px;">
+          <div class="field-row">
+            <div class="field"><label>Child's name</label><input id="f-childname" type="text" placeholder="e.g. Aarav" /></div>
+            <div class="field"><label>Age</label><input id="f-age" type="number" min="6" max="18" placeholder="12" /></div>
+          </div>
+          <div class="field"><label>Parent email</label><input id="f-email" type="email" placeholder="you@email.com" /></div>
+          <div class="field"><label>WhatsApp number</label><input id="f-phone" type="tel" placeholder="+91 98765 43210" /></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost btn-sm" onclick="goStep(2)">Back</button>
+          <button class="btn btn-primary" onclick="submitSignup()">Reserve seat</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: SUCCESS -->
+      <div class="step-panel" data-panel="4" style="text-align:center;">
+        <div class="success-anim">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path class="success-check" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div class="modal-title">Seat reserved! 🎉</div>
+        <p class="modal-desc">Welcome to the Plural family. Here's your child's spot.</p>
+        <div class="summary-box" id="summaryBox"></div>
+        <p class="modal-desc" style="font-size:0.82rem;">A confirmation is on its way to your email with trial dates and a WhatsApp invite to your batch group.</p>
+        <div class="modal-footer">
+          <button class="btn btn-primary" style="flex:1;" onclick="closeModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHATSAPP STICKY -->
+<div class="wa-pulse"></div>
+<button class="wa-btn" onclick="window.open('https://wa.me/919999999999?text=Hi!%20I%20want%20to%20know%20more%20about%20Plural%20for%20my%20child.','_blank')" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<!-- EXIT INTENT -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-box">
+    <button class="exit-close" onclick="closeExit()" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="exit-emoji">👋</div>
+    <div class="exit-title">Wait - one thing.</div>
+    <p class="exit-sub">First 2 sessions are completely free. Your child builds something real. If it's not for them - full refund, no questions. Drop your number and we'll tell you more.</p>
+    <div class="exit-field">
+      <input type="tel" id="exitPhone" placeholder="Your WhatsApp number" />
+      <button class="btn btn-primary btn-sm" onclick="submitExit()">Send</button>
+    </div>
+    <div class="exit-skip" onclick="closeExit()">No thanks, I'll decide later</div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1FBF8F" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+  <span id="toastMsg">Seat reserved!</span>
+</div>
+
+<script>
+/* ════════════ BATCH DATA + PERSISTENCE ════════════ */
+const DEFAULT_BATCHES = [
+  { id:'lm-a', program:'Little Makers',  color:'green',   slot:'Sat & Sun · 10:00 AM IST', start:'Jun 15, 2025', total:8, filled:5 },
+  { id:'ce-a', program:'Code Explorers', color:'blue',    slot:'Mon / Wed / Fri · 5:00 PM IST', start:'Jun 16, 2025', total:8, filled:7 },
+  { id:'ai-a', program:'AI Builders',    color:'saffron', slot:'Tue & Thu · 6:30 PM IST', start:'Jun 17, 2025', total:8, filled:6 },
+  { id:'lm-b', program:'Little Makers',  color:'green',   slot:'Sat & Sun · 11:30 AM IST', start:'Jun 22, 2025', total:8, filled:3 },
+  { id:'ce-b', program:'Code Explorers', color:'blue',    slot:'Mon & Thu · 5:30 PM IST', start:'Jun 23, 2025', total:8, filled:8 },
+  { id:'ai-b', program:'AI Builders',    color:'saffron', slot:'Wed & Sat · 4:00 PM IST', start:'Jun 24, 2025', total:8, filled:4 },
+];
+
+const STORE_KEY = 'plural_batches_v1';
+const SIGNUP_KEY = 'plural_signups_v1';
+
+function loadBatches() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY));
+    if (Array.isArray(saved) && saved.length) {
+      // merge filled counts onto defaults (keep static fields fresh)
+      return DEFAULT_BATCHES.map(d => {
+        const s = saved.find(x => x.id === d.id);
+        return s ? { ...d, filled: Math.min(s.filled, d.total) } : d;
+      });
+    }
+  } catch (e) {}
+  return DEFAULT_BATCHES.map(b => ({ ...b }));
+}
+
+let batches = loadBatches();
+function saveBatches() {
+  localStorage.setItem(STORE_KEY, JSON.stringify(batches.map(b => ({ id:b.id, filled:b.filled }))));
+}
+
+const COLOR = {
+  green:  { v:'var(--green)',   soft:'var(--green-soft)' },
+  blue:   { v:'var(--blue)',    soft:'var(--blue-soft)' },
+  saffron:{ v:'var(--saffron)', soft:'var(--saffron-soft)' },
+  purple: { v:'var(--purple)',  soft:'var(--purple-soft)' },
+};
+
+/* ════════════ RENDER BATCH CARDS ════════════ */
+function statusOf(b) {
+  const left = b.total - b.filled;
+  if (left <= 0) return { key:'full', label:'Batch Full', cls:'flag-full' };
+  if (left <= 2) return { key:'fast', label:`Only ${left} left`, cls:'flag-fast' };
+  return { key:'open', label:'Open', cls:'flag-open' };
+}
+
+function renderBatches() {
+  const grid = document.getElementById('batchGrid');
+  grid.innerHTML = batches.map(b => {
+    const left = b.total - b.filled;
+    const pct = Math.round((b.filled / b.total) * 100);
+    const st = statusOf(b);
+    const c = COLOR[b.color];
+    const full = left <= 0;
+    return `
+    <div class="bcard reveal in ${full ? 'is-full' : ''}">
+      <span class="bcard-flag ${st.cls}">${st.label}</span>
+      <div class="bcard-prog" style="color:${c.v}">${b.program}</div>
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px;">
+        <span style="background:#E8F4FF;color:#2D8CFF;font-size:0.7rem;font-weight:800;padding:3px 9px;border-radius:100px;letter-spacing:0.04em;">● LIVE ON ZOOM</span>
+        <span style="font-size:0.75rem;color:var(--faint);">Join from anywhere in India</span>
+      </div>
+      <div class="bcard-meta">
+        <div class="bmeta-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A5B8" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M16 3v4M8 3v4M3 10h18"/></svg> Starts ${b.start}</div>
+        <div class="bmeta-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A5B8" stroke-width="2"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3 2"/></svg> ${b.slot}</div>
+      </div>
+      <div class="bcard-progress">
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%;background:${c.v}"></div></div>
+        <div class="progress-meta">
+          <span class="seats-left" style="color:${full ? 'var(--faint)' : c.v}">${full ? 'Waitlist only' : left + ' seats left'}</span>
+          <span class="seats-total">${b.filled}/${b.total} filled</span>
+        </div>
+      </div>
+      <button class="btn ${full ? 'btn-ghost' : 'btn-dark'} btn-sm" onclick="openModal('${b.id}')">
+        ${full ? 'Join waitlist' : 'Reserve a seat'}
+      </button>
+    </div>`;
+  }).join('');
+}
+
+/* ════════════ MODAL FLOW ════════════ */
+const state = { program:null, age:null, batchId:null, step:1 };
+
+function openModal(batchId) {
+  if (batchId) {
+    const b = batches.find(x => x.id === batchId);
+    if (b) {
+      state.program = b.program;
+      state.age = b.age || null;
+      state.batchId = b.id;
+      // preselect program option
+      document.querySelectorAll('.prog-opt').forEach(o =>
+        o.classList.toggle('selected', o.dataset.program === b.program));
+      goStep(2);
+    }
+  } else {
+    goStep(1);
+  }
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  // reset after close animation
+  setTimeout(() => { if (state.step === 4) resetModal(); }, 300);
+}
+
+function resetModal() {
+  state.program = null; state.age = null; state.batchId = null;
+  document.querySelectorAll('.prog-opt').forEach(o => o.classList.remove('selected'));
+  ['f-childname','f-age','f-email','f-phone'].forEach(id => document.getElementById(id).value = '');
+  goStep(1);
+}
+
+function selectProgram(el) {
+  document.querySelectorAll('.prog-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  state.program = el.dataset.program;
+}
+
+function goStep(n) {
+  // validation gates
+  if (n === 2 && !state.program) { shake('.prog-select'); toast('Pick a program first'); return; }
+  if (n === 3 && !state.batchId) { toast('Select a batch to continue'); return; }
+
+  state.step = n;
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.toggle('active', +p.dataset.panel === n));
+  document.querySelectorAll('.mp-dot').forEach(d => d.classList.toggle('active', +d.dataset.dot <= n));
+
+  if (n === 2) renderModalBatches();
+}
+
+function renderModalBatches() {
+  const list = document.getElementById('modalBatchList');
+  const matching = batches.filter(b => b.program === state.program);
+  list.innerHTML = matching.map(b => {
+    const left = b.total - b.filled;
+    const pct = Math.round((b.filled / b.total) * 100);
+    const c = COLOR[b.color];
+    const full = left <= 0;
+    const sel = state.batchId === b.id ? 'selected' : '';
+    return `
+      <div class="batch-opt ${sel} ${full ? 'disabled' : ''}" ${full ? '' : `onclick="selectBatch('${b.id}')"`}>
+        <div class="batch-opt-top">
+          <div class="batch-opt-name">Starts ${b.start}</div>
+          <div class="batch-opt-seats" style="color:${full ? 'var(--faint)' : c.v}">${full ? 'Full' : left + ' left'}</div>
+        </div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:8px;">🎥 Live on Zoom · ${b.slot}</div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%;background:${c.v}"></div></div>
+      </div>`;
+  }).join('') || `<p style="color:var(--muted);font-size:0.9rem;">No live batches for this program yet - reserve and we'll place your child in the next one.</p>`;
+
+  // if only non-full batches and none selected, don't auto-select; let user choose
+}
+
+function selectBatch(id) {
+  state.batchId = id;
+  renderModalBatches();
+}
+
+function submitSignup() {
+  const name = document.getElementById('f-childname');
+  const age = document.getElementById('f-age');
+  const email = document.getElementById('f-email');
+  const phone = document.getElementById('f-phone');
+
+  let ok = true;
+  [name, age, phone].forEach(f => { if (!f.value.trim()) { f.classList.add('error'); ok = false; } else f.classList.remove('error'); });
+  if (!email.value.includes('@')) { email.classList.add('error'); ok = false; } else email.classList.remove('error');
+  if (!ok) { toast('Please fill all fields'); return; }
+
+  const b = batches.find(x => x.id === state.batchId);
+  let position = '-';
+  if (b && b.filled < b.total) {
+    b.filled += 1;
+    position = `#${b.filled} of ${b.total}`;
+    saveBatches();
+    renderBatches();
+  } else if (b) {
+    position = 'Waitlist';
+  }
+
+  // persist signup
+  try {
+    const all = JSON.parse(localStorage.getItem(SIGNUP_KEY) || '[]');
+    all.push({ child:name.value, age:age.value, email:email.value, phone:phone.value, program:state.program, batch:state.batchId, ts:Date.now() });
+    localStorage.setItem(SIGNUP_KEY, JSON.stringify(all));
+  } catch (e) {}
+
+  // summary
+  document.getElementById('summaryBox').innerHTML = `
+    <div class="summary-row"><span class="k">Child</span><span class="v">${escapeHtml(name.value)} (${escapeHtml(age.value)})</span></div>
+    <div class="summary-row"><span class="k">Program</span><span class="v">${state.program}</span></div>
+    <div class="summary-row"><span class="k">Format</span><span class="v">🎥 Live on Zoom</span></div>
+    <div class="summary-row"><span class="k">Schedule</span><span class="v">${b ? b.slot : '-'}</span></div>
+    <div class="summary-row"><span class="k">Starts</span><span class="v">${b ? b.start : '-'}</span></div>
+    <div class="summary-row"><span class="k">Your seat</span><span class="v" style="color:var(--saffron)">${position}</span></div>`;
+
+  goStep(4);
+  toast('Seat reserved! 🎉');
+}
+
+/* ════════════ HELPERS ════════════ */
+function escapeHtml(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+let toastTimer;
+function toast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+function shake(sel) {
+  const el = document.querySelector(sel);
+  if (!el) return;
+  el.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}], {duration:300});
+}
+
+/* close on overlay click + ESC */
+document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target.id === 'modalOverlay') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ════════════ SCROLL REVEAL + NAV ════════════ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+}, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 12);
+}, { passive:true });
+
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href').slice(1);
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth' }); }
+}));
+
+/* ════════════ LIVE SEAT "BREATHING" (social proof) ════════════ */
+// Occasionally nudge a random open batch to simulate live demand.
+setInterval(() => {
+  const open = batches.filter(b => b.filled < b.total);
+  if (!open.length) return;
+  if (Math.random() < 0.35) {
+    const b = open[Math.floor(Math.random() * open.length)];
+    b.filled += 1;
+    saveBatches();
+    renderBatches();
+    if (!document.getElementById('modalOverlay').classList.contains('open')) {
+      toast(`A family just joined ${b.program} - ${b.slot.split('·')[0].trim()}`);
+    }
+  }
+}, 18000);
+
+/* ════════════ FAQ ACCORDION ════════════ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* ════════════ EXIT INTENT ════════════ */
+let exitShown = false;
+document.addEventListener('mouseleave', e => {
+  if (e.clientY < 40 && !exitShown && !sessionStorage.getItem('plural_exit')) {
+    setTimeout(() => {
+      document.getElementById('exitOverlay').classList.add('open');
+      exitShown = true;
+    }, 200);
+  }
+});
+function closeExit() {
+  document.getElementById('exitOverlay').classList.remove('open');
+  sessionStorage.setItem('plural_exit', '1');
+}
+function submitExit() {
+  const ph = document.getElementById('exitPhone');
+  if (!ph.value.trim()) { ph.style.borderColor='var(--pink)'; return; }
+  try {
+    const all = JSON.parse(localStorage.getItem('plural_signups_v1') || '[]');
+    all.push({ phone: ph.value, source: 'exit', ts: Date.now() });
+    localStorage.setItem('plural_signups_v1', JSON.stringify(all));
+  } catch(e) {}
+  closeExit();
+  toast('🎉 We\'ll WhatsApp you shortly!');
+}
+
+/* ════════════ LIVE COUNTER ANIMATION ════════════ */
+(function() {
+  let families = 47, seats = 9;
+  function updateCounters() {
+    ['liveFamilies','liveFamilies2'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = families; });
+    ['liveSeats','liveSeats2'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = seats; });
+  }
+  updateCounters();
+  setInterval(() => {
+    if (Math.random() < 0.4) {
+      families++;
+      if (seats > 1 && Math.random() < 0.6) seats--;
+      updateCounters();
+    }
+  }, 12000);
+})();
+
+/* ════════════ HERO DEMO - VS Code + Copilot → Snake Game ════════════ */
+(function () {
+  const tabs = ['snake.js - VS Code', 'snake.js - Copilot writing...', 'snake.js - Running'];
+  const captions = [
+    'A 13-year-old asks GitHub Copilot to build a snake game...',
+    'Copilot writes 52 lines of JavaScript in under a minute...',
+    'The game is live! Built with VS Code + AI in 30 minutes.',
+  ];
+
+  const stage = document.querySelector('.jr-stage');
+  if (!stage) return;
+
+  const sceneEls = [
+    document.querySelector('.scene-vscode'),
+    document.querySelector('.scene-codegen'),
+    document.querySelector('.scene-game'),
+  ];
+  const steps = document.querySelectorAll('.jr-step');
+  const conns = document.querySelectorAll('.jr-conn');
+  const tabEl  = document.getElementById('jrTab');
+  const capEl  = document.getElementById('jrCaption');
+
+  /* ── step tracker ── */
+  function setStep(n) {
+    steps.forEach((s, i) => { s.classList.toggle('on', i === n); s.classList.toggle('done', i < n); });
+    conns.forEach((c, i) => c.classList.toggle('fill', i < n));
+    tabEl.textContent = tabs[n];
+    capEl.style.opacity = 0;
+    setTimeout(() => { capEl.textContent = captions[n]; capEl.style.opacity = 1; }, 180);
+  }
+
+  function showScene(n) {
+    sceneEls.forEach((s, i) => s && s.classList.toggle('active', i === n));
+    setStep(n);
+  }
+
+  /* ── SCENE 0: type the Copilot prompt ── */
+  const PROMPT = 'Build a snake game with canvas and JS. Add colors, score, and arrow key controls.';
+  let promptTimer;
+  function runScene0() {
+    const el = document.getElementById('chatPrompt');
+    const reply = document.getElementById('chatReply');
+    if (!el || !reply) return;
+    el.textContent = '';
+    reply.style.display = 'none';
+    reply.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+    clearInterval(promptTimer);
+    let i = 0;
+    promptTimer = setInterval(() => {
+      i++;
+      el.textContent = PROMPT.slice(0, i);
+      if (i >= PROMPT.length) {
+        clearInterval(promptTimer);
+        setTimeout(() => { reply.style.display = 'block'; }, 400);
+      }
+    }, 38);
+  }
+
+  /* ── SCENE 1: stream code lines ── */
+  const CODE_LINES = [
+    ['<span class="kw">const</span> canvas = document.<span class="fn">getElementById</span>(<span class="st">\'c\'</span>);'],
+    ['<span class="kw">const</span> ctx = canvas.<span class="fn">getContext</span>(<span class="st">\'2d\'</span>);'],
+    ['<span class="kw">const</span> SZ = <span class="nm">14</span>, COLS = <span class="nm">18</span>, ROWS = <span class="nm">18</span>;'],
+    ['<span class="kw">let</span> snake = [{x:<span class="nm">9</span>,y:<span class="nm">9</span>}], dir = {x:<span class="nm">1</span>,y:<span class="nm">0</span>};'],
+    ['<span class="kw">let</span> food = <span class="fn">spawnFood</span>(), score = <span class="nm">0</span>;'],
+    [''],
+    ['<span class="kw">function</span> <span class="fn">spawnFood</span>() {'],
+    ['  <span class="kw">return</span> {x:<span class="fn">randInt</span>(COLS),y:<span class="fn">randInt</span>(ROWS)};'],
+    ['}'],
+    ['<span class="kw">function</span> <span class="fn">randInt</span>(n){<span class="kw">return</span> Math.<span class="fn">floor</span>(Math.<span class="fn">random</span>()*n);}'],
+    [''],
+    ['<span class="kw">function</span> <span class="fn">draw</span>() {'],
+    ['  ctx.fillStyle = <span class="st">\'#0D1117\'</span>;'],
+    ['  ctx.<span class="fn">fillRect</span>(<span class="nm">0</span>,<span class="nm">0</span>,canvas.width,canvas.height);'],
+    ['  snake.<span class="fn">forEach</span>((s,i) => {'],
+    ['    ctx.fillStyle = i===<span class="nm">0</span> ? <span class="st">\'#4EC94E\'</span> : <span class="st">\'#2A7A2A\'</span>;'],
+    ['    ctx.<span class="fn">fillRect</span>(s.x*SZ+<span class="nm">1</span>,s.y*SZ+<span class="nm">1</span>,SZ-<span class="nm">2</span>,SZ-<span class="nm">2</span>);'],
+    ['  });'],
+    ['  ctx.fillStyle = <span class="st">\'#FF6B35\'</span>;'],
+    ['  ctx.<span class="fn">fillRect</span>(food.x*SZ,food.y*SZ,SZ,SZ);'],
+    ['}'],
+    [''],
+    ['<span class="kw">function</span> <span class="fn">tick</span>() {'],
+    ['  <span class="kw">const</span> head = {x:snake[<span class="nm">0</span>].x+dir.x,y:snake[<span class="nm">0</span>].y+dir.y};'],
+    ['  head.x=(head.x+COLS)%COLS; head.y=(head.y+ROWS)%ROWS;'],
+    ['  snake.<span class="fn">unshift</span>(head);'],
+    ['  <span class="kw">if</span>(head.x===food.x&&head.y===food.y){score++;food=<span class="fn">spawnFood</span>();}'],
+    ['  <span class="kw">else</span> snake.<span class="fn">pop</span>();'],
+    ['  <span class="fn">draw</span>();'],
+    ['}'],
+    ['<span class="fn">setInterval</span>(tick, <span class="nm">150</span>);'],
+  ];
+
+  let streamTimer;
+  function runScene1() {
+    const container = document.getElementById('streamLines');
+    const statusEl  = document.getElementById('copilotStatus');
+    if (!container) return;
+    container.innerHTML = '';
+    clearInterval(streamTimer);
+    let i = 0;
+    streamTimer = setInterval(() => {
+      if (i >= CODE_LINES.length) { clearInterval(streamTimer); if(statusEl) statusEl.textContent = '✓ Generated 52 lines · snake.js'; return; }
+      const div = document.createElement('div');
+      div.className = 'sline';
+      div.innerHTML = `<span class="sln">${i+1}</span><span>${CODE_LINES[i][0] || '&nbsp;'}</span>`;
+      container.appendChild(div);
+      requestAnimationFrame(() => div.classList.add('vis'));
+      container.scrollTop = container.scrollHeight;
+      if (statusEl) statusEl.textContent = `Generating... (${i+1}/${CODE_LINES.length} lines)`;
+      i++;
+    }, 90);
+  }
+
+  /* ── SCENE 2: Snake game on canvas ── */
+  let snakeLoop, snakeState;
+
+  function initSnake() {
+    const canvas = document.getElementById('snakeCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const SZ = 14, COLS = 18, ROWS = 18;
+    const scoreEl = document.getElementById('gameScore');
+
+    function randInt(n) { return Math.floor(Math.random() * n); }
+    function spawnFood(snake) {
+      let f;
+      do { f = { x: randInt(COLS), y: randInt(ROWS) }; }
+      while (snake.some(s => s.x === f.x && s.y === f.y));
+      return f;
+    }
+
+    snakeState = {
+      snake: [{ x: 9, y: 9 }, { x: 8, y: 9 }, { x: 7, y: 9 }],
+      dir: { x: 1, y: 0 },
+      nextDir: { x: 1, y: 0 },
+      food: null,
+      score: 0,
+    };
+    snakeState.food = spawnFood(snakeState.snake);
+
+    /* keyboard control */
+    function onKey(e) {
+      const map = { ArrowUp:{x:0,y:-1}, ArrowDown:{x:0,y:1}, ArrowLeft:{x:-1,y:0}, ArrowRight:{x:1,y:0} };
+      if (map[e.key]) { e.preventDefault(); snakeState.nextDir = map[e.key]; }
+    }
+    document.addEventListener('keydown', onKey);
+
+    /* auto-pilot: greedy move toward food, avoiding walls and self */
+    function autoDir() {
+      const h = snakeState.snake[0];
+      const f = snakeState.food;
+      const candidates = [
+        { x: 1, y: 0 }, { x: -1, y: 0 }, { x: 0, y: 1 }, { x: 0, y: -1 }
+      ].filter(d => {
+        /* don't reverse */
+        if (d.x === -snakeState.dir.x && d.y === -snakeState.dir.y) return false;
+        const nx = (h.x + d.x + COLS) % COLS, ny = (h.y + d.y + ROWS) % ROWS;
+        /* avoid self (except tail tip which will move) */
+        return !snakeState.snake.slice(0, -1).some(s => s.x === nx && s.y === ny);
+      });
+      if (!candidates.length) return snakeState.dir;
+      /* prefer direction toward food */
+      candidates.sort((a, b) => {
+        const da = Math.abs(h.x + a.x - f.x) + Math.abs(h.y + a.y - f.y);
+        const db = Math.abs(h.x + b.x - f.x) + Math.abs(h.y + b.y - f.y);
+        return da - db;
+      });
+      return candidates[0];
+    }
+
+    function drawCell(x, y, color, radius = 3) {
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.roundRect(x * SZ + 1, y * SZ + 1, SZ - 2, SZ - 2, radius);
+      ctx.fill();
+    }
+
+    function tick() {
+      /* auto-pilot nudge every other tick */
+      if (Math.random() < 0.7) snakeState.nextDir = autoDir();
+      snakeState.dir = snakeState.nextDir;
+
+      const head = {
+        x: (snakeState.snake[0].x + snakeState.dir.x + COLS) % COLS,
+        y: (snakeState.snake[0].y + snakeState.dir.y + ROWS) % ROWS,
+      };
+
+      /* self-collision → reset */
+      if (snakeState.snake.some(s => s.x === head.x && s.y === head.y)) {
+        snakeState.snake = [{ x: 9, y: 9 }, { x: 8, y: 9 }, { x: 7, y: 9 }];
+        snakeState.dir = snakeState.nextDir = { x: 1, y: 0 };
+        snakeState.score = 0;
+      } else {
+        snakeState.snake.unshift(head);
+        if (head.x === snakeState.food.x && head.y === snakeState.food.y) {
+          snakeState.score++;
+          snakeState.food = spawnFood(snakeState.snake);
+        } else {
+          snakeState.snake.pop();
+        }
+      }
+
+      /* draw */
+      ctx.fillStyle = '#0D1117';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      /* grid dots */
+      ctx.fillStyle = 'rgba(255,255,255,0.04)';
+      for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+        ctx.fillRect(c * SZ + SZ / 2 - 1, r * SZ + SZ / 2 - 1, 2, 2);
+      }
+
+      /* food glow */
+      const grd = ctx.createRadialGradient(
+        snakeState.food.x * SZ + SZ / 2, snakeState.food.y * SZ + SZ / 2, 2,
+        snakeState.food.x * SZ + SZ / 2, snakeState.food.y * SZ + SZ / 2, SZ
+      );
+      grd.addColorStop(0, 'rgba(255,107,53,0.6)');
+      grd.addColorStop(1, 'transparent');
+      ctx.fillStyle = grd;
+      ctx.fillRect(snakeState.food.x * SZ - SZ, snakeState.food.y * SZ - SZ, SZ * 3, SZ * 3);
+      drawCell(snakeState.food.x, snakeState.food.y, '#FF6B35', 4);
+
+      /* snake body */
+      snakeState.snake.forEach((s, i) => {
+        const t = 1 - i / snakeState.snake.length;
+        const g = Math.round(100 + t * 101);
+        drawCell(s.x, s.y, i === 0 ? '#4EC94E' : `rgb(30,${g},30)`, i === 0 ? 5 : 3);
+      });
+
+      if (scoreEl) scoreEl.textContent = snakeState.score;
+    }
+
+    clearInterval(snakeLoop);
+    snakeLoop = setInterval(tick, 130);
+  }
+
+  /* ── scene switcher ── */
+  let cur = 0, autoTimer;
+  function show(n) {
+    showScene(n);
+    if (n === 0) runScene0();
+    if (n === 1) runScene1();
+    if (n === 2) initSnake();
+    if (n !== 2) clearInterval(snakeLoop);
+  }
+
+  setTimeout(() => {
+    show(0);
+    autoTimer = setInterval(() => { cur = (cur + 1) % 3; show(cur); }, 4200);
+  }, 1100);
+})();
+
+/* init */
+renderBatches();
+</script>
+
+</body>
+</html>

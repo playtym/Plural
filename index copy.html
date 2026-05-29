@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plural — India's AI Generation</title>
+  <meta name="description" content="Plural teaches AI & Programming to India's kids. Catching them young. Solving nation's problems. One at a time." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root {
+      --bg: #050507;
+      --surface: #0d0d12;
+      --surface-2: #111118;
+      --border: rgba(255,255,255,0.07);
+      --border-bright: rgba(255,255,255,0.12);
+      --text: #f0f0f5;
+      --muted: rgba(240,240,245,0.45);
+      --faint: rgba(240,240,245,0.18);
+      --orange: #FF5C00;
+      --orange-dim: rgba(255,92,0,0.12);
+      --orange-glow: rgba(255,92,0,0.25);
+      --green: #00D37F;
+      --blue: #5B8EFF;
+      --r-sm: 12px;
+      --r-md: 20px;
+      --r-lg: 28px;
+      --r-xl: 40px;
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── ANIMATED GRID BG ──────────────────────────── */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* ─── NAV ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(5,5,7,0.8);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .logo em { color: var(--orange); font-style: normal; }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-pill {
+      height: 34px;
+      padding: 0 16px;
+      border-radius: 100px;
+      background: var(--text);
+      color: var(--bg) !important;
+      font-weight: 600 !important;
+      display: inline-flex;
+      align-items: center;
+      transition: opacity 0.2s !important;
+    }
+    .nav-pill:hover { opacity: 0.85; }
+
+    /* ─── AGENT STATUS BAR ──────────────────────────── */
+    .agent-bar {
+      position: fixed;
+      top: 64px; left: 0; right: 0;
+      z-index: 190;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 9px 40px;
+      background: var(--orange-dim);
+      border-bottom: 1px solid rgba(255,92,0,0.15);
+      overflow: hidden;
+    }
+
+    .agent-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: rgba(255,140,60,0.9);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .agent-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 6px var(--orange);
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .agent-sep { width: 1px; height: 12px; background: rgba(255,92,0,0.2); }
+
+    /* ─── HERO ──────────────────────────────────────── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 100px;
+    }
+
+    /* Radial glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 500px;
+      background: radial-gradient(ellipse at top, rgba(255,92,0,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid rgba(255,92,0,0.25);
+      border-radius: 100px;
+      padding: 6px 14px;
+      margin-bottom: 40px;
+      background: var(--orange-dim);
+    }
+    .hero-eyebrow-dot {
+      width: 5px; height: 5px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+
+    .hero-h1 .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(32px);
+      animation: wordIn 0.7s var(--ease-out) forwards;
+    }
+
+    .hero-h1 .line-2 { color: var(--muted); }
+
+    @keyframes wordIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s var(--ease-out) forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 100px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s var(--ease-out) forwards;
+    }
+
+    .btn {
+      height: 44px;
+      padding: 0 22px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: transform 0.25s var(--ease-spring), opacity 0.2s;
+      letter-spacing: -0.01em;
+      border: none;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn:active { transform: scale(0.97); }
+
+    .btn-fill {
+      background: var(--orange);
+      color: #fff;
+      box-shadow: 0 0 0 0 var(--orange-glow);
+      transition: transform 0.25s var(--ease-spring), box-shadow 0.3s;
+    }
+    .btn-fill:hover { box-shadow: 0 0 32px 4px var(--orange-glow); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border-bright);
+    }
+    .btn-ghost:hover { color: var(--text); border-color: var(--border-bright); background: rgba(255,255,255,0.04); }
+
+    /* ─── HERO METRICS ──────────────────────────────── */
+    .hero-metrics {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s var(--ease-out) forwards;
+    }
+
+    .metric {
+      text-align: center;
+    }
+    .metric-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+    .metric-val sup { font-size: 0.6em; color: var(--orange); }
+    .metric-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ─── SCROLL TICKER ─────────────────────────────── */
+    .ticker {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      animation: ticker 40s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 0 32px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+    .ticker-item span { color: var(--orange); }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── SECTION COMMONS ───────────────────────────── */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 140px 40px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .section-full {
+      position: relative;
+      z-index: 1;
+      padding: 140px 40px;
+    }
+
+    .section-full > .inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .h2 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .h2 em { color: var(--muted); font-style: normal; }
+
+    .body-lg {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 480px;
+    }
+
+    /* ─── REVEAL ANIMATIONS ─────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ─── MISSION ───────────────────────────────────── */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .mission-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--border);
+    }
+
+    .mission-block {
+      background: var(--surface);
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: background 0.2s;
+    }
+    .mission-block:hover { background: var(--surface-2); }
+
+    .block-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .block-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      letter-spacing: -0.02em;
+    }
+
+    .block-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── PROGRAMS ──────────────────────────────────── */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-top: 60px;
+    }
+
+    .program {
+      background: var(--surface);
+      padding: 40px 36px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.25s;
+      overflow: hidden;
+    }
+
+    .program::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out);
+    }
+    .program:hover::before { transform: scaleX(1); }
+    .program:hover { background: var(--surface-2); }
+
+    .program-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--faint);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .program-glyph {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .program-age {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .program-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .program-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .program-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--faint);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── INDIA BLOCK ───────────────────────────────── */
+    .india-section {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .india-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 60px;
+    }
+
+    .india-card {
+      background: var(--bg);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+    .india-card:hover { background: var(--surface); }
+
+    .india-icon { font-size: 1.5rem; margin-bottom: 16px; }
+    .india-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .india-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── STATEMENT ─────────────────────────────────── */
+    .statement {
+      padding: 160px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .statement::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(255,92,0,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .statement-h {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 1.0;
+      max-width: 800px;
+      margin: 0 auto 32px;
+    }
+    .statement-h .dim { color: var(--muted); }
+    .statement-h .accent { color: var(--orange); }
+
+    .statement-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+
+    /* ─── COMMUNITY ─────────────────────────────────── */
+    .community-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .community-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .c-stat {
+      background: var(--surface);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+    .c-stat:hover { background: var(--surface-2); }
+
+    .c-stat-val {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .c-stat-val .orange { color: var(--orange); }
+
+    .c-stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .comm-features {
+      list-style: none;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .comm-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .comm-feature:last-child { border-bottom: none; }
+
+    .cf-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--orange-dim);
+      border: 1px solid rgba(255,92,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .cf-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .cf-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── TIMELINE ──────────────────────────────────── */
+    .timeline {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      max-width: 700px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 4px; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 28px;
+      padding-bottom: 48px;
+      position: relative;
+    }
+
+    .tl-dot {
+      width: 37px; height: 37px;
+      min-width: 37px;
+      border-radius: 50%;
+      border: 1px solid var(--border-bright);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .tl-item:hover .tl-dot {
+      border-color: var(--orange);
+      background: var(--orange-dim);
+    }
+
+    .tl-body { padding-top: 6px; }
+
+    .tl-step {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .tl-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .tl-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── TESTIMONIALS ──────────────────────────────── */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-top: 60px;
+    }
+
+    .testi {
+      background: var(--surface);
+      padding: 36px 32px;
+      transition: background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .testi:hover { background: var(--surface-2); }
+
+    .testi.big { grid-row: span 2; }
+
+    .testi-quote {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text);
+      flex: 1;
+      margin-bottom: 28px;
+    }
+    .testi.big .testi-quote { font-size: 1.1rem; }
+
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+
+    .testi-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      border: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .testi-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .testi-info {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─── MENTORS ───────────────────────────────────── */
+    .mentors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-top: 60px;
+    }
+
+    .mentor {
+      background: var(--surface);
+      padding: 36px 28px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .mentor:hover { background: var(--surface-2); }
+
+    .mentor-avi {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      border: 1px solid var(--border-bright);
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .mentor-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .mentor-role {
+      font-size: 0.72rem;
+      color: var(--orange);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .mentor-co {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* ─── AGENT TERMINAL ────────────────────────────── */
+    .terminal {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px 140px;
+    }
+
+    .terminal-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .terminal-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .term-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    }
+
+    .term-top {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .term-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .td-r { background: #FF5F57; }
+    .td-y { background: #FEBC2E; }
+    .td-g { background: #28C840; }
+
+    .term-title {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: 8px;
+      font-family: inherit;
+    }
+
+    .term-body {
+      padding: 24px;
+      font-size: 0.8rem;
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    .t-line { display: flex; gap: 12px; }
+    .t-prompt { color: var(--orange); }
+    .t-cmd { color: var(--text); }
+    .t-out { color: var(--green); }
+    .t-comment { color: var(--faint); font-style: italic; }
+    .t-cursor {
+      display: inline-block;
+      width: 8px; height: 14px;
+      background: var(--orange);
+      vertical-align: text-bottom;
+      animation: caret 1s step-end infinite;
+    }
+    @keyframes caret {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* ─── CTA ───────────────────────────────────────── */
+    .cta-section {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px 160px;
+    }
+
+    .cta-box {
+      max-width: 1160px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 100px 60px;
+      text-align: center;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(255,92,0,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-h {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .cta-input {
+      flex: 1;
+      min-width: 200px;
+      height: 44px;
+      padding: 0 18px;
+      background: var(--bg);
+      border: 1px solid var(--border-bright);
+      border-radius: 100px;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .cta-input::placeholder { color: var(--muted); }
+    .cta-input:focus { border-color: rgba(255,92,0,0.4); }
+
+    .cta-note {
+      font-size: 0.72rem;
+      color: var(--faint);
+      margin-top: 16px;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 60px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-brand p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-top: 12px;
+      max-width: 260px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .footer-col a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      letter-spacing: -0.01em;
+    }
+    .footer-col a:hover { color: var(--text); }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 48px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p, .footer-bottom span {
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .programs-grid { grid-template-columns: 1fr 1fr; }
+      .mentors-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr 1fr; }
+      .testi.big { grid-row: auto; grid-column: span 2; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 120px 20px 80px; }
+      .section, .section-full, .cta-section, .terminal { padding-left: 20px; padding-right: 20px; }
+      .mission-grid, .community-layout { grid-template-columns: 1fr; gap: 48px; }
+      .programs-grid, .india-grid, .mentors-grid, .testi-grid { grid-template-columns: 1fr; }
+      .testi.big { grid-column: auto; }
+      .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+      .hero-metrics { gap: 36px; }
+      .community-stats { grid-template-columns: 1fr 1fr; }
+      .terminal-header { grid-template-columns: 1fr; }
+      .agent-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- GRID TEXTURE -->
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Plural<em>.</em></div>
+  <ul class="nav-links">
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#india">India</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#mentors">Mentors</a></li>
+    <li><a href="#join" class="nav-pill">Join Waitlist</a></li>
+  </ul>
+</nav>
+
+<!-- AGENT STATUS BAR -->
+<div class="agent-bar" aria-label="Live stats">
+  <div class="agent-item">
+    <span class="agent-dot"></span>
+    Active Learners: 10,284
+  </div>
+  <div class="agent-sep"></div>
+  <div class="agent-item">Projects shipped today: <span>47</span></div>
+  <div class="agent-sep"></div>
+  <div class="agent-item">Cities live: <span>48</span></div>
+  <div class="agent-sep"></div>
+  <div class="agent-item">Next cohort: <span>Jun 15, 2025</span></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    India's AI Generation
+  </div>
+
+  <h1 class="hero-h1">
+    <span class="word" style="animation-delay:0.05s">Teaching</span>&nbsp;
+    <span class="word" style="animation-delay:0.12s">India's</span>&nbsp;
+    <span class="word" style="animation-delay:0.19s">Kids</span>&nbsp;
+    <span class="word" style="animation-delay:0.26s">to</span>
+    <br />
+    <span class="word line-2" style="animation-delay:0.33s">Build</span>&nbsp;
+    <span class="word line-2" style="animation-delay:0.4s">with</span>&nbsp;
+    <span class="word" style="animation-delay:0.47s;color:var(--orange)">AI.</span>
+  </h1>
+
+  <p class="hero-sub">
+    600 million Indians under 25. Every one of them a potential builder. Plural catches them young, teaches them to code with AI, and connects them to a movement that will define the next century.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#join" class="btn btn-fill">
+      Enroll Your Child
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="#programs" class="btn btn-ghost">View Programs</a>
+  </div>
+
+  <div class="hero-metrics">
+    <div class="metric">
+      <div class="metric-val">10K<sup>+</sup></div>
+      <div class="metric-label">Young Builders</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">28</div>
+      <div class="metric-label">States</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">500<sup>+</sup></div>
+      <div class="metric-label">Real Projects</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">94<sup>%</sup></div>
+      <div class="metric-label">Would Recommend</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">AI for India <span>·</span></span>
+    <span class="ticker-item">Made in Bharat <span>·</span></span>
+    <span class="ticker-item">Young Innovators <span>·</span></span>
+    <span class="ticker-item">Code to Solve <span>·</span></span>
+    <span class="ticker-item">Deeptech Generation <span>·</span></span>
+    <span class="ticker-item">One Problem at a Time <span>·</span></span>
+    <span class="ticker-item">Catch Them Young <span>·</span></span>
+    <span class="ticker-item">India Wins <span>·</span></span>
+    <span class="ticker-item">AI for India <span>·</span></span>
+    <span class="ticker-item">Made in Bharat <span>·</span></span>
+    <span class="ticker-item">Young Innovators <span>·</span></span>
+    <span class="ticker-item">Code to Solve <span>·</span></span>
+    <span class="ticker-item">Deeptech Generation <span>·</span></span>
+    <span class="ticker-item">One Problem at a Time <span>·</span></span>
+    <span class="ticker-item">Catch Them Young <span>·</span></span>
+    <span class="ticker-item">India Wins <span>·</span></span>
+  </div>
+</div>
+
+<!-- MISSION -->
+<div class="section">
+  <div class="mission-grid">
+    <div>
+      <div class="label reveal">Mission</div>
+      <h2 class="h2 reveal reveal-delay-1">India won't<br /><em>just use AI.</em><br />India will lead it.</h2>
+      <p class="body-lg reveal reveal-delay-2">
+        Every child who learns to build with AI today becomes a creator of tomorrow's India — not a passive consumer of technology made elsewhere.
+      </p>
+      <p class="body-lg reveal reveal-delay-3" style="margin-top:16px;">
+        We don't teach coding as a subject. We teach it as a <strong style="color:var(--text)">superpower</strong>.
+      </p>
+    </div>
+
+    <div class="mission-right reveal reveal-delay-2">
+      <div class="mission-block">
+        <span class="block-icon">🤖</span>
+        <div>
+          <div class="block-title">AI-First Curriculum</div>
+          <div class="block-desc">Every program is built around AI and modern frameworks — not yesterday's tech.</div>
+        </div>
+      </div>
+      <div class="mission-block">
+        <span class="block-icon">🛠️</span>
+        <div>
+          <div class="block-title">100% Project-Based</div>
+          <div class="block-desc">Kids build real things in their first week. No passive learning ever.</div>
+        </div>
+      </div>
+      <div class="mission-block">
+        <span class="block-icon">🇮🇳</span>
+        <div>
+          <div class="block-title">Built for India</div>
+          <div class="block-desc">Curriculum designed for Indian problems, in Indian languages, with Indian context.</div>
+        </div>
+      </div>
+      <div class="mission-block">
+        <span class="block-icon">🌐</span>
+        <div>
+          <div class="block-title">Global Standard</div>
+          <div class="block-desc">The skills our kids learn compete on the world stage — Silicon Valley-level quality.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<div class="section" id="programs" style="padding-top:0">
+  <div class="label reveal">Programs</div>
+  <h2 class="h2 reveal reveal-delay-1">Learn. Build. Launch.</h2>
+
+  <div class="programs-grid">
+    <div class="program reveal">
+      <div class="program-num">01</div>
+      <span class="program-glyph">🌱</span>
+      <div class="program-age">Ages 8–10 · Beginner</div>
+      <div class="program-name">Little Makers</div>
+      <p class="program-body">Robotics, logic, and block coding. The first spark. No experience needed — just curiosity.</p>
+      <div class="program-tags">
+        <span class="tag">Block Coding</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">Logic</span>
+      </div>
+    </div>
+
+    <div class="program reveal reveal-delay-1">
+      <div class="program-num">02</div>
+      <span class="program-glyph">💻</span>
+      <div class="program-age">Ages 10–13 · Intermediate</div>
+      <div class="program-name">Code Explorers</div>
+      <p class="program-body">Games, apps, and websites. Real code, real projects. The transition from "using" to "making".</p>
+      <div class="program-tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Python</span>
+        <span class="tag">Web Dev</span>
+      </div>
+    </div>
+
+    <div class="program reveal reveal-delay-2">
+      <div class="program-num">03</div>
+      <span class="program-glyph">🤖</span>
+      <div class="program-age">Ages 13–18 · Advanced</div>
+      <div class="program-name">AI Builders</div>
+      <p class="program-body">LLMs, ML, real APIs. Build AI tools that solve India's problems. Portfolio-worthy at 16.</p>
+      <div class="program-tags">
+        <span class="tag">Python</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">ML</span>
+        <span class="tag">APIs</span>
+      </div>
+    </div>
+
+    <div class="program reveal reveal-delay-3" style="border-top:1px solid var(--border); grid-column: 1 / -1; border-radius: 0;">
+      <div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap;">
+        <div>
+          <div class="program-num">04 · Elite</div>
+          <span class="program-glyph" style="font-size:1.4rem;margin-bottom:12px;">🏆</span>
+          <div class="program-age">Ages 14–18 · National</div>
+          <div class="program-name">Hackathon League</div>
+        </div>
+        <p class="program-body" style="max-width:400px;margin-bottom:0;">Monthly national hackathons. Teams solve India's real problems. Winners get mentorship from India's top founders and a fast track to the best colleges.</p>
+        <div style="margin-left:auto;">
+          <a href="#join" class="btn btn-ghost" style="border-color:rgba(255,92,0,0.25);color:var(--orange)">Apply Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INDIA PROBLEMS -->
+<div class="section-full india-section" id="india">
+  <div class="inner">
+    <div class="label reveal">India's Opportunity</div>
+    <h2 class="h2 reveal reveal-delay-1">Real problems.<br /><em>Real builders.</em></h2>
+    <p class="body-lg reveal reveal-delay-2">India's biggest challenges are waiting for India's own innovators — not Silicon Valley's. We're building the generation that will solve them.</p>
+
+    <div class="india-grid">
+      <div class="india-card reveal">
+        <div class="india-icon">🌾</div>
+        <div class="india-title">Agriculture & Food Security</div>
+        <p class="india-text">700M+ farmers need AI-powered crop prediction, market tools, and weather intelligence. The builder is a 14-year-old from Vidarbha who understands this firsthand.</p>
+      </div>
+      <div class="india-card reveal reveal-delay-1">
+        <div class="india-icon">🏥</div>
+        <div class="india-title">Healthcare Access</div>
+        <p class="india-text">1 doctor per 1511 people. AI diagnostics, local-language health bots, telemedicine apps — built by kids who've seen the gaps in their own villages.</p>
+      </div>
+      <div class="india-card reveal reveal-delay-2">
+        <div class="india-icon">🎓</div>
+        <div class="india-title">Education Inequality</div>
+        <p class="india-text">Quality education shouldn't depend on your pin code. AI tutors in 22 languages. Adaptive learning for every Indian child.</p>
+      </div>
+      <div class="india-card reveal reveal-delay-3">
+        <div class="india-icon">💧</div>
+        <div class="india-title">Water & Climate</div>
+        <p class="india-text">600 districts face water stress. IoT sensors, AI prediction models, climate dashboards — the solutions exist in minds we haven't yet taught.</p>
+      </div>
+      <div class="india-card reveal reveal-delay-4">
+        <div class="india-icon">🚦</div>
+        <div class="india-title">Urban Infrastructure</div>
+        <p class="india-text">India's cities grow faster than their systems. Smart traffic, waste AI, civic tech — built by the kids who actually live here.</p>
+      </div>
+      <div class="india-card reveal reveal-delay-5">
+        <div class="india-icon">💼</div>
+        <div class="india-title">Economic Inclusion</div>
+        <p class="india-text">100M+ micro-entrepreneurs need fintech and supply chain AI to compete globally. India's kids can build this for their own families.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<div class="statement">
+  <h2 class="statement-h reveal">
+    India gave the world <span class="accent">zero.</span><br />
+    <span class="dim">Now let's give it</span><br />
+    the future.
+  </h2>
+  <p class="statement-sub reveal reveal-delay-1">
+    From IITs to village schools, Mumbai to Mizoram — every Indian child deserves to be a builder. Not just use AI. Build it.
+  </p>
+  <a href="#join" class="btn btn-fill reveal reveal-delay-2">Be Part of It</a>
+</div>
+
+<!-- COMMUNITY -->
+<div class="section" id="community">
+  <div class="community-layout">
+    <div>
+      <div class="label reveal">Community</div>
+      <h2 class="h2 reveal reveal-delay-1">A nation of<br /><em>young builders.</em></h2>
+      <p class="body-lg reveal reveal-delay-2">Innovation doesn't happen alone. Plural is building India's largest community of young innovators — where today's students become tomorrow's founders.</p>
+
+      <ul class="comm-features">
+        <li class="comm-feature reveal reveal-delay-2">
+          <div class="cf-icon">🤝</div>
+          <div>
+            <div class="cf-title">Innovation Circles</div>
+            <div class="cf-desc">Small cohorts of 8 students across different cities. Build together, compete together, stay friends for life.</div>
+          </div>
+        </li>
+        <li class="comm-feature reveal reveal-delay-3">
+          <div class="cf-icon">🏅</div>
+          <div>
+            <div class="cf-title">National Hackathon Circuit</div>
+            <div class="cf-desc">District → State → National. Win recognition, mentorship, and a shot at India's best investors.</div>
+          </div>
+        </li>
+        <li class="comm-feature reveal reveal-delay-4">
+          <div class="cf-icon">⚡</div>
+          <div>
+            <div class="cf-title">Open Source for India</div>
+            <div class="cf-desc">Every student contributes to public repos solving real problems. Build your portfolio. Build your country.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="community-stats reveal reveal-delay-2">
+      <div class="c-stat">
+        <div class="c-stat-val">10<span class="orange">K</span></div>
+        <div class="c-stat-label">Young builders</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-val">28</div>
+        <div class="c-stat-label">States</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-val">500<span class="orange">+</span></div>
+        <div class="c-stat-label">Projects shipped</div>
+      </div>
+      <div class="c-stat">
+        <div class="c-stat-val">48</div>
+        <div class="c-stat-label">Cities & growing</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section" style="padding-top:0">
+  <div class="label reveal">The Journey</div>
+  <h2 class="h2 reveal reveal-delay-1">From curious<br /><em>to creator.</em></h2>
+
+  <div class="timeline">
+    <div class="tl-item reveal reveal-delay-1">
+      <div class="tl-dot">🌱</div>
+      <div class="tl-body">
+        <div class="tl-step">Step 01</div>
+        <div class="tl-title">Discover Your Superpower</div>
+        <p class="tl-desc">Free 2-week explorer program. Play, build, fall in love with creating. No prior knowledge needed.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-2">
+      <div class="tl-dot">🔧</div>
+      <div class="tl-body">
+        <div class="tl-step">Step 02</div>
+        <div class="tl-title">Build Real Things</div>
+        <p class="tl-desc">100% project-based. Kids ship their first app in week one. Every concept applied immediately to something real.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-3">
+      <div class="tl-dot">🤝</div>
+      <div class="tl-body">
+        <div class="tl-step">Step 03</div>
+        <div class="tl-title">Find Your Tribe</div>
+        <p class="tl-desc">Matched into an Innovation Circle of peers across India. Weekly syncs, shared projects, lifelong friends.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-4">
+      <div class="tl-dot">🏆</div>
+      <div class="tl-body">
+        <div class="tl-step">Step 04</div>
+        <div class="tl-title">Compete & Get Recognized</div>
+        <p class="tl-desc">Enter the national hackathon circuit. Solve India's problems. Win mentorship from India's best builders.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-5">
+      <div class="tl-dot">🚀</div>
+      <div class="tl-body">
+        <div class="tl-step">Step 05</div>
+        <div class="tl-title">Launch & Lead</div>
+        <p class="tl-desc">Graduate as a Plural Alumni — with a portfolio, a national network, and the confidence to build anything.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENT TERMINAL -->
+<div class="terminal">
+  <div class="terminal-inner">
+    <div class="terminal-header">
+      <div>
+        <div class="label reveal">What We Build</div>
+        <h2 class="h2 reveal reveal-delay-1">AI agents.<br /><em>Real impact.</em></h2>
+      </div>
+      <p class="body-lg reveal reveal-delay-2">Students at Plural don't just learn theory — they ship code. Here's what a session with one of our 15-year-old AI Builders looks like.</p>
+    </div>
+
+    <div class="term-box reveal">
+      <div class="term-top">
+        <span class="term-dot td-r"></span>
+        <span class="term-dot td-y"></span>
+        <span class="term-dot td-g"></span>
+        <span class="term-title">plural-ai-builder — Aryan, 15, Ajmer</span>
+      </div>
+      <div class="term-body">
+        <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">plural run agri-price-agent --region rajasthan</span></div>
+        <div class="t-line"><span class="t-out">✓ Agent initialized. Connecting to mandi APIs...</span></div>
+        <div class="t-line"><span class="t-out">✓ Loaded crop price data for 47 mandis in Rajasthan</span></div>
+        <div class="t-line"><span class="t-out">✓ ML model predicting optimal sell date for wheat...</span></div>
+        <div class="t-line"><span class="t-comment">  # "My dad sold wheat 3 weeks too early last year. Lost ₹40,000."</span></div>
+        <div class="t-line"><span class="t-out">✓ Sending WhatsApp alert to 1,248 farmers</span></div>
+        <div class="t-line"><span class="t-out">✓ Impact estimate: ₹2.1 Cr additional income this harvest</span></div>
+        <div class="t-line" style="margin-top:8px;"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section-full" style="padding-top:0;padding-bottom:140px;">
+  <div class="inner">
+    <div class="label reveal">Stories</div>
+    <h2 class="h2 reveal reveal-delay-1">What builders say.</h2>
+
+    <div class="testi-grid">
+      <div class="testi big reveal">
+        <p class="testi-quote">"I'm 15, from a small town in Rajasthan. Before Plural, I didn't know coding was something kids like me could do. Now I've built an AI tool that helps local farmers get fair prices for their crops. My dad cried when he saw it work for the first time. That's when I knew — this is what I want to do for the rest of my life."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👦</div>
+          <div>
+            <div class="testi-name">Aryan Sharma, 15</div>
+            <div class="testi-info">AI Builders Alumni · Ajmer, Rajasthan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi reveal reveal-delay-1">
+        <p class="testi-quote">"My daughter used to be afraid of math. Now she's debugging Python at 11pm because she 'almost has it'. Plural gave her confidence."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👩</div>
+          <div>
+            <div class="testi-name">Sunita Iyer</div>
+            <div class="testi-info">Parent · Bengaluru</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi reveal reveal-delay-2">
+        <p class="testi-quote">"We won nationals. Our team built a flood prediction model for Bihar. None of us had met before Plural. Now we're best friends building something that could save lives."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👧</div>
+          <div>
+            <div class="testi-name">Riya Pandey, 16</div>
+            <div class="testi-info">Hackathon Champion · Patna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MENTORS -->
+<div class="section-full" id="mentors" style="padding-top:0;padding-bottom:140px;">
+  <div class="inner">
+    <div class="label reveal">Mentors</div>
+    <h2 class="h2 reveal reveal-delay-1">Guided by<br /><em>India's best builders.</em></h2>
+
+    <div class="mentors-grid">
+      <div class="mentor reveal">
+        <div class="mentor-avi">👩‍💻</div>
+        <div class="mentor-name">Priya Sharma</div>
+        <div class="mentor-role">AI Research Lead</div>
+        <div class="mentor-co">Ex-Google Brain · IIT Delhi</div>
+      </div>
+      <div class="mentor reveal reveal-delay-1">
+        <div class="mentor-avi">🧑‍🚀</div>
+        <div class="mentor-name">Arjun Mehta</div>
+        <div class="mentor-role">Founder & CEO</div>
+        <div class="mentor-co">ClimateAI · BITS Pilani</div>
+      </div>
+      <div class="mentor reveal reveal-delay-2">
+        <div class="mentor-avi">👩‍🔬</div>
+        <div class="mentor-name">Kavita Nair</div>
+        <div class="mentor-role">Deep Learning</div>
+        <div class="mentor-co">Microsoft Research India</div>
+      </div>
+      <div class="mentor reveal reveal-delay-3">
+        <div class="mentor-avi">🧑‍💼</div>
+        <div class="mentor-name">Rohit Gupta</div>
+        <div class="mentor-role">Serial Entrepreneur</div>
+        <div class="mentor-co">3× Founder · YC Alumni</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;" class="reveal">
+      <a href="#join" class="btn btn-ghost" style="font-size:0.82rem;">Are you a builder? Become a mentor →</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section" id="join">
+  <div class="cta-box reveal">
+    <div class="label" style="justify-content:center;display:flex;margin-bottom:24px;">Inaugural Cohort · Jun 2025</div>
+    <h2 class="cta-h">Your child's future<br />starts <span style="color:var(--orange)">right now.</span></h2>
+    <p class="cta-sub">India's AI generation is forming. Secure your spot in the inaugural cohort and give your child the skills, community, and confidence to shape what comes next.</p>
+    <div class="cta-form">
+      <input class="cta-input" type="email" placeholder="your@email.com" id="cta-email" />
+      <button class="btn btn-fill" onclick="handleJoin(this)">
+        Claim Spot
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <p class="cta-note">Free 2-week trial · No credit card · Join 10,000+ families</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Plural<em>.</em></div>
+      <p>Building India's AI generation — one curious kid at a time. From Ladakh to Lakshadweep, every Indian child deserves to be a builder.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Programs</h5>
+      <ul>
+        <li><a href="#programs">Little Makers (8–10)</a></li>
+        <li><a href="#programs">Code Explorers (10–13)</a></li>
+        <li><a href="#programs">AI Builders (13–18)</a></li>
+        <li><a href="#programs">Hackathon League</a></li>
+        <li><a href="#programs">School Partnerships</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Community</h5>
+      <ul>
+        <li><a href="#community">Innovation Circles</a></li>
+        <li><a href="#community">Hackathon Circuit</a></li>
+        <li><a href="#community">Open Source</a></li>
+        <li><a href="#mentors">Become a Mentor</a></li>
+        <li><a href="#community">Alumni Network</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#india">Mission</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Plural Technologies Pvt. Ltd.</p>
+    <span>Made with pride in 🇮🇳 India</span>
+  </div>
+</footer>
+
+<script>
+  // ── REVEAL ON SCROLL ─────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── NAV SCROLL STATE ─────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.borderBottomColor =
+      window.scrollY > 10 ? 'rgba(255,255,255,0.09)' : 'rgba(255,255,255,0.07)';
+  }, { passive: true });
+
+  // ── CTA SUBMIT ───────────────────────────────────
+  function handleJoin(btn) {
+    const input = document.getElementById('cta-email');
+    if (!input.value || !input.value.includes('@')) {
+      input.style.borderColor = 'rgba(255,92,0,0.6)';
+      input.focus();
+      setTimeout(() => input.style.borderColor = '', 2000);
+      return;
+    }
+    btn.innerHTML = '✓ You\'re in!';
+    btn.style.background = 'var(--green)';
+    btn.disabled = true;
+    input.disabled = true;
+    input.value = 'Check your inbox. Welcome to Plural.';
+  }
+
+  // ── HERO WORD ANIMATION STAGGER ──────────────────
+  // Already handled via CSS animation-delay on .word spans.
+
+  // ── SMOOTH ANCHOR LINKS ──────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ── PROGRAM HOVER: spring scale on child elements ─
+  document.querySelectorAll('.program').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.querySelector('.program-glyph').style.transform = 'scale(1.2) translateY(-2px)';
+      card.querySelector('.program-glyph').style.transition = 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.querySelector('.program-glyph').style.transform = '';
+    });
+  });
+</script>
+
+</body>
+</html>
